@@ -9,15 +9,18 @@ public class Fish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (fish.transform.position.x >= 8)
+        {
+            fish.transform.Rotate(0f,180f,0);
+        }
+        Destroy(gameObject, 10.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(fish.transform.position.x >10){
-            Destroy(gameObject, 1.0f);
-        }
-        fish.transform.position += transform.right *speed * + Time.deltaTime;
+        
+        fish.transform.position += transform.right *speed * Time.deltaTime;
+        
     }
 }

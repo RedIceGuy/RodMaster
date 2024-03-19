@@ -16,6 +16,7 @@ public class fishSpawner : MonoBehaviour
     [SerializeField]
     private float spawntimer = 3.5f;
 
+    int[] options = {8,-8};
     public Transform spawnerTransform;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class fishSpawner : MonoBehaviour
     private IEnumerator spawnFish(float interval, GameObject fish)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newFish = Instantiate(fish, new Vector3(spawnerTransform.position.x,Random.Range(-3f,3),0), Quaternion.identity);
+        GameObject newFish = Instantiate(fish, new Vector3(options[Random.Range(0,2)],Random.Range(-4f,4),0), Quaternion.identity);
         StartCoroutine(spawnFish(interval,fish));
     }
 }
