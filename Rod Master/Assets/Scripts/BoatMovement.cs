@@ -6,16 +6,21 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float maxSpeed;
     private Rigidbody2D rb;
+    GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        gm = GameManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        // Can't move boat while fishing
+        if (!gm.GetFishingMode()) {
+            Move();
+        }
     }
 
     void Move() {
