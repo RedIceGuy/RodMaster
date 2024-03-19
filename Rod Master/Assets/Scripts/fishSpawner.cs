@@ -8,6 +8,12 @@ public class fishSpawner : MonoBehaviour
     private GameObject puffer;
 
     [SerializeField]
+    private GameObject clownFish;
+
+    [SerializeField]
+    private GameObject sardine;
+
+    [SerializeField]
     private float spawntimer = 3.5f;
 
     public Transform spawnerTransform;
@@ -15,6 +21,8 @@ public class fishSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(spawnFish(spawntimer, puffer));
+        StartCoroutine(spawnFish(spawntimer-1f, clownFish));
+        StartCoroutine(spawnFish(spawntimer-2.5f, sardine));
     }
 
     private IEnumerator spawnFish(float interval, GameObject fish)

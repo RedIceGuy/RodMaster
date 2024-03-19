@@ -15,6 +15,9 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(fish.transform.position.x >10){
+            Destroy(gameObject, 1.0f);
+        }
         fish.transform.position += transform.right *speed * + Time.deltaTime;
     }
 }
