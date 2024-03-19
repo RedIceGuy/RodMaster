@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class FishingRod : MonoBehaviour
+public class FishingRodRotation : MonoBehaviour
 {
 
     void Update()

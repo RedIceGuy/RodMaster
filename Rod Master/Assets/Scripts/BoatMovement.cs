@@ -7,7 +7,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] float maxSpeed;
     private Rigidbody2D rb;
     GameManager gm;
-    public GameObject rod;
+    public GameObject rodPivot;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +20,10 @@ public class BoatMovement : MonoBehaviour
     {
         // Can't move boat while fishing
         if (!gm.GetFishingMode()) {
+            rodPivot.SetActive(false);
             Move();
         } else {
+            rodPivot.SetActive(true);
         }
     }
 

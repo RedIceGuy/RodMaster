@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   maxSpeed: 20
-  rod: {fileID: 6482621198847694358}
+  rodPivot: {fileID: 8543450273542305228}
 --- !u!50 &4474638122910134120
 Rigidbody2D:
   serializedVersion: 4
@@ -188,7 +188,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8875236963316279837}
   - component: {fileID: 5861175113621726444}
-  - component: {fileID: 2188181772555649440}
   m_Layer: 0
   m_Name: FishingRod
   m_TagString: Untagged
@@ -263,18 +262,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2188181772555649440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6482621198847694358}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a76e70ad396db1f489d44e35e82af14d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8543450273542305228
 GameObject:
   m_ObjectHideFlags: 0
