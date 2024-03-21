@@ -124,7 +124,7 @@ MonoBehaviour:
   fish: {fileID: 5121385147420720944}
   speed: 6
   spawntimer: 2
-  value: 0
+  value: 10
 --- !u!50 &4238475039003612315
 Rigidbody2D:
   serializedVersion: 4

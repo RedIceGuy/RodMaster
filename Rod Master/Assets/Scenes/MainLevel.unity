@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -317,6 +317,10 @@ PrefabInstance:
       propertyPath: equippedRod
       value: 
       objectReference: {fileID: 3251373346199778732, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
+    - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+      propertyPath: fishCatchHeight
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -634,7 +638,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 860.4, y: 440.9}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669136911
 MonoBehaviour:
@@ -1047,6 +1051,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1812526053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6477849910704433067, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
+  m_PrefabInstance: {fileID: 1825906608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1825906608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1086,6 +1095,14 @@ PrefabInstance:
     - target: {fileID: 998910507580217620, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -36.372
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137256815708540998, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
+      propertyPath: hook
+      value: 
+      objectReference: {fileID: 1812526053}
+    - target: {fileID: 5137256815708540998, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
+      propertyPath: maxSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5689511111052709766, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
       propertyPath: m_Name

@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
     bool fishingMode = true;
+    public float fishCatchHeight;
 
     [Header("Shop variables")]
     readonly string BASE_CURRENCY_TEXT = "Money owned: $";
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
         else if (_instance != this) {
             Destroy(gameObject);
         }
-        // SetNewRod();
+        SetNewRod();
     }
 
     void SetNewRod() {
@@ -38,12 +39,16 @@ public class GameManager : MonoBehaviour
         if (p) {
             Debug.Log("P exists");
             // Remove old rod
+            Transform oldRodTransform = null;
             foreach (Transform child in p.transform) {  
+                oldRodTransform = child.gameObject.transform;
                 Destroy(child.gameObject);
             }
             // Set new rod as child
-            GameObject rod = Instantiate(equippedRod);
-            rod.transform.parent = p.transform;
+            GameObject rod = Instantiate(equippedRod, p.transform);
+            if (oldRodTransform) {
+                rod.transform.SetPositionAndRotation(oldRodTransform.position, Quaternion.identity);
+            }
         }
     }
 

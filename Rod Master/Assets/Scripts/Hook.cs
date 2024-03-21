@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Hook : MonoBehaviour
@@ -12,7 +10,7 @@ public class Hook : MonoBehaviour
     {
         float verticalInput = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(0f, verticalInput) * Hookspeed * Time.deltaTime;
+        Vector2 movement = Hookspeed * Time.deltaTime * new Vector2(0f, verticalInput);
 
         transform.Translate(movement);
     }

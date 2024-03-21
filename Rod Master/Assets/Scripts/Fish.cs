@@ -12,7 +12,11 @@ public class Fish : MonoBehaviour
     private bool is_hooked = false;
     private bool bitten = false;
     private Hook hook;
-    // Start is called before the first frame update
+    GameManager gm;
+
+    private void Awake() {
+        gm = GameManager.Instance;
+    }
 
     void Start()
     {
@@ -30,10 +34,13 @@ public class Fish : MonoBehaviour
         {
             fish.transform.position += transform.right *speed * Time.deltaTime;
         }
-        if (fish.transform.position.y >= 6)
+        if (fish.transform.position.y >= gm.fishCatchHeight)
         {
+            gm.currency += value;
             // TODO should destroy and add currency for player
             Destroy(gameObject);
+            // Hook can catch another fish
+            hook.hooked = false;
         }
         
     }

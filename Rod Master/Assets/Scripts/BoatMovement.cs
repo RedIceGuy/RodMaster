@@ -7,7 +7,10 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] float maxSpeed;
     private Rigidbody2D rb;
     GameManager gm;
-    public GameObject rodPivot;
+
+    [Header("Disabled while moving")]
+    [SerializeField] GameObject rodPivot;
+    [SerializeField] GameObject hook;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +24,11 @@ public class BoatMovement : MonoBehaviour
         // Can't move boat while fishing
         if (!gm.GetFishingMode()) {
             rodPivot.SetActive(false);
+            hook.SetActive(false);
             Move();
         } else {
             rodPivot.SetActive(true);
+            hook.SetActive(true);
         }
     }
 
