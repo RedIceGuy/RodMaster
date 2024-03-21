@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 1000
-  equippedRod: {fileID: 0}
+  equippedRod: {fileID: 3251373346199778732, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
 --- !u!4 &195024240
 Transform:
   m_ObjectHideFlags: 0
@@ -936,6 +936,22 @@ PrefabInstance:
     - target: {fileID: 5900612499086753812, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875236963316279837, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.97174215
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875236963316279837, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5504404
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875236963316279837, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2312332
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875236963316279837, guid: 8fa0541e697a4dd498a02c090bb279a0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

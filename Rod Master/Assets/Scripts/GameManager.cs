@@ -29,10 +29,18 @@ public class GameManager : MonoBehaviour
     }
 
     void SetNewRod() {
-        GameObject boat = GameObject.Find("Boat");
+        GameObject p = GameObject.Find("RodPivot");
         // Only need to update the rod if we are in a fishing level
-        if (boat) {
-            
+        Debug.Log("SetNewRod");
+        if (p) {
+            Debug.Log("P exists");
+            // Remove old rod
+            foreach (Transform child in p.transform) {  
+                Destroy(child.gameObject);
+            }
+            // Set new rod as child
+            GameObject rod = Instantiate(equippedRod);
+            rod.transform.parent = p.transform;
         }
     }
 
