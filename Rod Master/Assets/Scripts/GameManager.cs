@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     bool fishingMode = true;
 
+    [Header("Shop variables")]
+    readonly string BASE_CURRENCY_TEXT = "Money owned: $";
+    public TMPro.TextMeshProUGUI currencyText;
     public int currency;
     public GameObject equippedRod;
 
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour
         else if (_instance != this) {
             Destroy(gameObject);
         }
-        SetNewRod();
+        // SetNewRod();
     }
 
     void SetNewRod() {
@@ -59,8 +62,24 @@ public class GameManager : MonoBehaviour
     void ToggleFishingMode() {
         fishingMode = !fishingMode;
     }
-    public void UpgradeFishingRod(GameObject betterRod, int price) {
+    void UpgradeFishingRod(GameObject betterRod, int price) {
         currency -= price;
         equippedRod = betterRod;
+    }
+
+    void UpdateCurrency() {
+        currencyText.text = BASE_CURRENCY_TEXT + currency.ToString();
+    }
+
+    public void PurchaseRod(GameObject rod, int price) {
+        if (currency >= price) {
+            UpgradeFishingRod(rod, price);
+        }
+        UpdateCurrency();
+    }
+
+    public void SetCurrencyText(TMPro.TextMeshProUGUI text) {
+        currencyText = text;
+        UpdateCurrency();
     }
 }
