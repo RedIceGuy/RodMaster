@@ -5,6 +5,9 @@ using UnityEngine;
 public class fishSpawner : MonoBehaviour
 {
     [SerializeField]
+    private GameObject sunFish;
+
+    [SerializeField]
     private GameObject puffer;
 
     [SerializeField]
@@ -21,6 +24,7 @@ public class fishSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(spawnFish(spawntimer, sunFish));
         StartCoroutine(spawnFish(spawntimer, puffer));
         StartCoroutine(spawnFish(spawntimer-1f, clownFish));
         StartCoroutine(spawnFish(spawntimer-2.5f, sardine));
