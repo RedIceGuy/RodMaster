@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61adf8ff716192a489bb9994c55d6048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currency: 0
+  currency: 1000
   equippedRod: {fileID: 0}
 --- !u!4 &195024240
 Transform:

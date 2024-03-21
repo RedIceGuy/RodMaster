@@ -25,6 +25,15 @@ public class GameManager : MonoBehaviour
         else if (_instance != this) {
             Destroy(gameObject);
         }
+        SetNewRod();
+    }
+
+    void SetNewRod() {
+        GameObject boat = GameObject.Find("Boat");
+        // Only need to update the rod if we are in a fishing level
+        if (boat) {
+            
+        }
     }
 
     void Update()
