@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     bool fishingMode = true;
 
+    public int currency = 0;
+    public GameObject equippedRod;
+
     public static GameManager Instance {
         get {
             if(_instance == null) {
@@ -18,12 +21,6 @@ public class GameManager : MonoBehaviour
         _instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
