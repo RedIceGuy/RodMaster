@@ -12,7 +12,7 @@ public class ShopLogic : MonoBehaviour
         UpdateCurrency();
     }
 
-    void UpdateCurrency() {
+    public void UpdateCurrency() {
         currencyText.text = BASE_CURRENCY_TEXT + gm.currency.ToString();
     }
 
