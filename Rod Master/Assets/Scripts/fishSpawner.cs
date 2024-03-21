@@ -13,17 +13,16 @@ public class fishSpawner : MonoBehaviour
     [SerializeField]
     private GameObject sardine;
 
-    [SerializeField]
-    private float spawntimer = 3.5f;
+
 
     int[] options = {8,-8};
     public Transform spawnerTransform;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(spawnFish(spawntimer, puffer));
-        StartCoroutine(spawnFish(spawntimer-1f, clownFish));
-        StartCoroutine(spawnFish(spawntimer-2.5f, sardine));
+        StartCoroutine(spawnFish(puffer.GetComponent<Fish>().spawntimer, puffer));
+        StartCoroutine(spawnFish(clownFish.GetComponent<Fish>().spawntimer, clownFish));
+        StartCoroutine(spawnFish(sardine.GetComponent<Fish>().spawntimer, sardine));
     }
 
     private IEnumerator spawnFish(float interval, GameObject fish)

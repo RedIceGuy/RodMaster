@@ -6,6 +6,7 @@ public class Fish : MonoBehaviour
 {
     public Transform fish;
     public int speed = 10;
+    public float spawntimer = 3.5f;
     // Start is called before the first frame update
     void Start()
     {
