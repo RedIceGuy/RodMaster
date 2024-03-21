@@ -40,5 +40,20 @@ public class BoatMovement : MonoBehaviour
         // Prevent frame-dependent movement
         movement = speed * Time.deltaTime * movement;
         rb.velocity += movement;
+
+        float xVelocity = rb.velocity.x;
+        float deltaVelocity = 0;
+        // Max speed to the right
+        if (xVelocity > maxSpeed) {
+            deltaVelocity = rb.velocity.x - maxSpeed;
+        }
+        // Max speed to the left
+        else if (xVelocity < -maxSpeed) {
+            // Notice the negation of maxSpeed
+            deltaVelocity = rb.velocity.x - maxSpeed * -1;
+        }
+
+        // Clamp down to max speed
+        rb.velocity -= new Vector2(deltaVelocity, 0);
     }
 }

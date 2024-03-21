@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8860853224398053545}
   - component: {fileID: 5137256815708540998}
   - component: {fileID: 4474638122910134120}
-  - component: {fileID: 6391058221182514151}
+  - component: {fileID: 3423390663598103205}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -130,8 +130,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6391058221182514151
-PolygonCollider2D:
+--- !u!61 &3423390663598103205
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,7 +162,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.26992714}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -172,19 +172,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.28321442, y: -0.049994472}
-      - {x: 0.37393403, y: 0.041106157}
-      - {x: 0.37297076, y: 0.09325544}
-      - {x: 0.32564992, y: 0.093732275}
-      - {x: 0.24247761, y: 0.03787104}
-      - {x: -0.3728912, y: 0.046416074}
-      - {x: -0.36795136, y: -0.023925673}
-      - {x: -0.32544574, y: -0.066489086}
-      - {x: -0.23670451, y: -0.09333876}
-      - {x: 0.16659524, y: -0.09214624}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 7.4, y: 1.2601457}
+  m_EdgeRadius: 0
 --- !u!1 &8543450273542305228
 GameObject:
   m_ObjectHideFlags: 0
