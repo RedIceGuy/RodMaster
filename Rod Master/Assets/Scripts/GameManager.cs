@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     bool fishingMode = true;
 
-    public int currency = 0;
+    public int currency;
     public GameObject equippedRod;
 
     public static GameManager Instance {
@@ -18,7 +18,13 @@ public class GameManager : MonoBehaviour
     }
 
     private void Awake() {
-        _instance = this;
+        if (_instance == null) {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (_instance != this) {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
@@ -35,5 +41,9 @@ public class GameManager : MonoBehaviour
 
     void ToggleFishingMode() {
         fishingMode = !fishingMode;
+    }
+    public void UpgradeFishingRod(GameObject betterRod, int price) {
+        currency -= price;
+        equippedRod = betterRod;
     }
 }
