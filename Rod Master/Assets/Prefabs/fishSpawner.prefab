@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c180640090d93b4b8f483aed8d034b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sunFish: {fileID: 5870530782519379468, guid: 92f8fa67b31e4fb48a82d31a54d140f9, type: 3}
   puffer: {fileID: 5870530782519379468, guid: e00bc6c0f56161c4f9de4555e6cf9f17, type: 3}
   clownFish: {fileID: 7115623119950144698, guid: e26f0643baea6154580fdae2ed11d811, type: 3}
   sardine: {fileID: 3246913904176350901, guid: 7c0ca1929dc85094ea61f06e4ef73552, type: 3}

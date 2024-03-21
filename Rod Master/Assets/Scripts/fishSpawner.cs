@@ -5,6 +5,9 @@ using UnityEngine;
 public class fishSpawner : MonoBehaviour
 {
     [SerializeField]
+    private GameObject sunFish;
+
+    [SerializeField]
     private GameObject puffer;
 
     [SerializeField]
