@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a8371264a20684c88e7b9fa1e89954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junk1: {fileID: 5157897493718249768, guid: d83c0dacee649804bbb58a7a5f90ff34, type: 3}
+  junk1: {fileID: 760634304370045596, guid: d83c0dacee649804bbb58a7a5f90ff34, type: 3}
   spawntimer: 4
 --- !u!1001 &8600983462142747423
 PrefabInstance:
