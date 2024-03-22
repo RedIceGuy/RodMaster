@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RodToPurchase: {fileID: 3133589787326632321, guid: 2de4f375f094d78438bb9d0001506957, type: 3}
   button: {fileID: 0}
-  price: 0
+  price: 500
 --- !u!1 &728313180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,7 +2721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RodToPurchase: {fileID: 3133589787326632321, guid: 15b0aeaf9b19fc2498726510489d361c, type: 3}
   button: {fileID: 0}
-  price: 0
+  price: 1000
 --- !u!1 &1671658150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,7 +3133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RodToPurchase: {fileID: 3133589787326632321, guid: 40cf391e0e80d7e41bb1be6caf46706e, type: 3}
   button: {fileID: 0}
-  price: 0
+  price: 100
 --- !u!1 &2038934861
 GameObject:
   m_ObjectHideFlags: 0
