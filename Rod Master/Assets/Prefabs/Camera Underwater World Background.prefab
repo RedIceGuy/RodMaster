@@ -739,7 +739,6 @@ GameObject:
   - component: {fileID: 8931593363392839017}
   - component: {fileID: 8931593363392839019}
   - component: {fileID: 8931593363392839016}
-  - component: {fileID: 5688634420913546227}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -830,23 +829,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 8931593363197152424}
   parallaxEffect: 1
---- !u!114 &5688634420913546227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8931593363392839014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c180640090d93b4b8f483aed8d034b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puffer: {fileID: 0}
-  clownFish: {fileID: 0}
-  sardine: {fileID: 0}
-  spawntimer: 3.5
-  spawnerTransform: {fileID: 0}
 --- !u!1 &8931593363494991689
 GameObject:
   m_ObjectHideFlags: 0

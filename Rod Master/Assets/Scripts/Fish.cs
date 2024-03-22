@@ -40,15 +40,20 @@ public class Fish : MonoBehaviour
             // TODO should destroy and add currency for player
             Destroy(gameObject);
             // Hook can catch another fish
-            hook.hooked = false;
+            if (hook != null)
+            {
+                hook.hooked = false;
+            }
         }
         
     }
 
     public void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Player"))
+        {
+            hook = other.gameObject.GetComponentInChildren<Hook>();
+            if (hook != null)
             {
-                hook = other.gameObject.GetComponentInChildren<Hook>();
                 bitten = hook.hooked;
                 if (!bitten)
                 {
@@ -59,6 +64,7 @@ public class Fish : MonoBehaviour
                 }
             }
         }
+    }
 
     IEnumerator DestroyAfterDelay(){
         yield return new WaitForSeconds(10f);

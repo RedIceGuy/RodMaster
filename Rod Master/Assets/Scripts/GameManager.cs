@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance {
         get {
             if(_instance == null) {
-                Debug.Log("GameManager is NULL");
+                // Debug.Log("GameManager is NULL");
             }
             return _instance;
         }
@@ -35,9 +35,9 @@ public class GameManager : MonoBehaviour
     void SetNewRod() {
         GameObject p = GameObject.Find("RodPivot");
         // Only need to update the rod if we are in a fishing level
-        Debug.Log("SetNewRod");
+        // Debug.Log("SetNewRod");
         if (p) {
-            Debug.Log("P exists");
+            // Debug.Log("P exists");
             // Remove old rod
             Transform oldRodTransform = null;
             foreach (Transform child in p.transform) {  
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             ToggleFishingMode();
-            Debug.Log(fishingMode ? "Fishing!" : "Moving!");
+            // Debug.Log(fishingMode ? "Fishing!" : "Moving!");
         }
     }
 

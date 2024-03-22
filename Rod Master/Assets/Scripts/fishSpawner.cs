@@ -26,6 +26,7 @@ public class fishSpawner : MonoBehaviour
         StartCoroutine(spawnFish(puffer.GetComponent<Fish>().spawntimer, puffer));
         StartCoroutine(spawnFish(clownFish.GetComponent<Fish>().spawntimer, clownFish));
         StartCoroutine(spawnFish(sardine.GetComponent<Fish>().spawntimer, sardine));
+        StartCoroutine(spawnFish(sardine.GetComponent<Fish>().spawntimer, sunFish));
     }
 
     private IEnumerator spawnFish(float interval, GameObject fish)
