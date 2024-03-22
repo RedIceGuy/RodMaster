@@ -32,7 +32,7 @@ public class fishSpawner : MonoBehaviour
     private IEnumerator spawnFish(float interval, GameObject fish)
     {
         yield return new WaitForSeconds(interval);
-        Instantiate(fish, new Vector3(options[Random.Range(0,2)],Random.Range(-4f,4),0), Quaternion.identity);
+        Instantiate(fish, new Vector3(options[Random.Range(0,2)],Random.Range(-4f,2.5f),0), Quaternion.identity);
         StartCoroutine(spawnFish(interval,fish));
     }
 }
