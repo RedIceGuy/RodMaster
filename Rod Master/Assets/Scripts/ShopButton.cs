@@ -18,9 +18,9 @@ public class ShopButton : MonoBehaviour
 
         // If the player already owns the fishing rod assigned to the button
         if (sl.ownedFishingRods.Contains(RodToPurchase)) {
-            priceText.text = "Already owned";
-            button.interactable = false;
+            RodBought();
         }
+        // If the player can't afford to buy the rod
         else if (gm.currency < price) {
             button.interactable = false;
         }
@@ -28,10 +28,17 @@ public class ShopButton : MonoBehaviour
 
     public void PurchaseRod() {
         gm.PurchaseRod(RodToPurchase, price);
-        if (sl.ownedFishingRods == null) {
-            Debug.LogWarning("Owned Rods is NULL!");
-        }
         sl.ownedFishingRods.Add(RodToPurchase);
+        RodBought();
+    }
+
+    void RodBought() {
+        priceText.text = "Already owned";
+        // Different color for when rod is owned vs. when it can't be afforded
+        var colors = button.colors;
+        colors.disabledColor = Color.yellow;
+        button.colors = colors;
+
         button.interactable = false;
     }
 }
