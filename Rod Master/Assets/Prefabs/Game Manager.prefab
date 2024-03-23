@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61adf8ff716192a489bb9994c55d6048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishCatchHeight: 0
+  currencyText: {fileID: 3335497613147433645, guid: 5b4c55d4278b498438ebc1d4b50a1d45, type: 3}
+  currency: 500
+  equippedRod: {fileID: 3251373346199778732, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}

@@ -4,9 +4,8 @@ using UnityEngine.UI;
 public class ShopButton : MonoBehaviour
 {
     GameManager gm;
-    [SerializeField]
-    GameObject RodToPurchase;
-    public Button button;
+    [SerializeField] GameObject RodToPurchase;
+    Button button;
     public int price = 0;
 
     private void Awake() {
