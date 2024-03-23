@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2033149685286550575, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
+      propertyPath: HookSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2033149685286550575, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
+      propertyPath: FishingLineHealth
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 1414451171524390997, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
       propertyPath: m_Color.b
       value: 0

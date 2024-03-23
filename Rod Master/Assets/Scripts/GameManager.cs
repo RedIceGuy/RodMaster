@@ -14,9 +14,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance {
         get {
-            if(_instance == null) {
-                // Debug.Log("GameManager is NULL");
-            }
             return _instance;
         }
     }
@@ -29,15 +26,14 @@ public class GameManager : MonoBehaviour
         else if (_instance != this) {
             Destroy(gameObject);
         }
-        SetNewRod();
+        BoatRod();
     }
 
     void SetNewRod() {
         GameObject p = GameObject.Find("RodPivot");
+        Debug.Log(equippedRod);
         // Only need to update the rod if we are in a fishing level
-        // Debug.Log("SetNewRod");
         if (p) {
-            // Debug.Log("P exists");
             // Remove old rod
             Transform oldRodTransform = null;
             foreach (Transform child in p.transform) {  
@@ -52,11 +48,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void Rod() {
+        // Get the parent of the fishing rod
+        GameObject pivot = GameObject.Find("RodPivot");
+        
+        // TODO: Try removing the rod from the boat prefab and use the GM to instantiate the everytime rod instead
+        foreach (Transform oldRod in pivot.transform) {
+            // PrefabUtility.ReplacePrefabAssetOfPrefabInstance(PrefabUtility.ConvertToPrefabInstance(oldRod.gameObject, pivot, ConvertToPrefabInstanceSettings.Equals, InteractionMode.AutomatedAction), equippedRod, InteractionMode.AutomatedAction);
+        }
+        // GameObject oldRod = PrefabUtility.GetCorrespondingObjectFromSource(gameObject)
+    }
+
+    void BoatRod() {
+        // Get the parent of the fishing rod
+        GameObject pivot = GameObject.Find("RodPivot");
+        Instantiate(equippedRod, pivot.transform);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             ToggleFishingMode();
-            // Debug.Log(fishingMode ? "Fishing!" : "Moving!");
         }
     }
 
@@ -79,6 +91,7 @@ public class GameManager : MonoBehaviour
     public void PurchaseRod(GameObject rod, int price) {
         if (currency >= price) {
             UpgradeFishingRod(rod, price);
+            Debug.Log(equippedRod);
         }
         UpdateCurrency();
     }
