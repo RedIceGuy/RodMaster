@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8372144289794563742}
-  - component: {fileID: 1701745436712813153}
+  - component: {fileID: -1388925900902216624}
   m_Layer: 0
   m_Name: fishSpawner
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1701745436712813153
+--- !u!114 &-1388925900902216624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,13 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1641562903402639176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c180640090d93b4b8f483aed8d034b2, type: 3}
+  m_Script: {fileID: 11500000, guid: a413953b5d505ec4d8d1b45500becaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puffer: {fileID: 5870530782519379468, guid: e00bc6c0f56161c4f9de4555e6cf9f17, type: 3}
-  clownFish: {fileID: 7115623119950144698, guid: e26f0643baea6154580fdae2ed11d811, type: 3}
-  sardine: {fileID: 3246913904176350901, guid: 7c0ca1929dc85094ea61f06e4ef73552, type: 3}
-  sunFish: {fileID: 5870530782519379468, guid: 92f8fa67b31e4fb48a82d31a54d140f9, type: 3}
-  swordFish: {fileID: 5870530782519379468, guid: 74aa109cf530d06478ce45c72558eaf7, type: 3}
-  tuna: {fileID: 5870530782519379468, guid: 3e65b57308906584fa324446d56332a1, type: 3}
-  spawnerTransform: {fileID: 8372144289794563742}
+  fishesToSpawn:
+  - {fileID: 7115623119950144698, guid: e26f0643baea6154580fdae2ed11d811, type: 3}
+  - {fileID: 5870530782519379468, guid: e00bc6c0f56161c4f9de4555e6cf9f17, type: 3}
+  - {fileID: 3246913904176350901, guid: 7c0ca1929dc85094ea61f06e4ef73552, type: 3}
+  - {fileID: 5870530782519379468, guid: 92f8fa67b31e4fb48a82d31a54d140f9, type: 3}
+  - {fileID: 5870530782519379468, guid: 74aa109cf530d06478ce45c72558eaf7, type: 3}
+  - {fileID: 5870530782519379468, guid: 3e65b57308906584fa324446d56332a1, type: 3}
