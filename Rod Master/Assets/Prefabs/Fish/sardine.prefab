@@ -125,7 +125,7 @@ MonoBehaviour:
   speed: 6
   spawntimer: 2
   value: 10
-  min_y: -4
+  min_y: -1
   max_y: 2.5
 --- !u!50 &4238475039003612315
 Rigidbody2D:

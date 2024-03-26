@@ -1,11 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
+    public enum FishType{
+        Big,
+        Medium,
+        Small,
+    }
+
+
     public Transform fish;
+    public FishType fishType;
     public int speed = 10;
     public float spawntimer;
     public int value;
@@ -47,12 +56,13 @@ public class Fish : MonoBehaviour
     }
 
     public void DestroyFish(){
-       Destroy(gameObject);
        // Hook can catch another fish
+       Instantiate(Resources.Load("BLOOD"), transform.position, Quaternion.identity);
             if (hook != null)
             {
                 hook.hooked = false;
             } 
+        Destroy(gameObject);
     }
 
     public void OnTriggerEnter2D(Collider2D other){

@@ -123,10 +123,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 3014348068889676675}
   speed: 5
-  spawntimer: 5
+  spawntimer: 10
   value: 100
   min_y: -4
-  max_y: 2.5
+  max_y: -1
 --- !u!50 &6490247368132841150
 Rigidbody2D:
   serializedVersion: 4
