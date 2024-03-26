@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8841244905969055393}
   m_Layer: 0
   m_Name: Sun Fish
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   spawntimer: 3.5
   value: 100
   min_y: -4
-  max_y: 2.5
+  max_y: 1
 --- !u!50 &9117951156721005758
 Rigidbody2D:
   serializedVersion: 4

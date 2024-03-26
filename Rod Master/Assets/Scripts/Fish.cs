@@ -9,7 +9,7 @@ public class Fish : MonoBehaviour
     public int speed = 10;
     public float spawntimer;
     public int value;
-    private bool is_hooked = false;
+    public bool is_hooked = false;
     private bool bitten = false;
     private Hook hook;
     public float min_y = -4f;
@@ -40,14 +40,18 @@ public class Fish : MonoBehaviour
         {
             gm.currency += value;
             // TODO should destroy and add currency for player
-            Destroy(gameObject);
-            // Hook can catch another fish
+            DestroyFish();
+        }
+        
+    }
+
+    public void DestroyFish(){
+       Destroy(gameObject);
+       // Hook can catch another fish
             if (hook != null)
             {
                 hook.hooked = false;
-            }
-        }
-        
+            } 
     }
 
     public void OnTriggerEnter2D(Collider2D other){
