@@ -5,13 +5,23 @@ using UnityEngine;
 public class JunkCollider : MonoBehaviour
 {
 
-    private bool is_hooked = false;
-    private Hook hook;
+    private bool hooked_fish = false;
     
+    // cheks if junk collides with fish
     public void OnTriggerEnter2D(Collider2D other){
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Fish"))
         {
-            Debug.Log("JUNK HIT");
+            // get collided fish
+            Fish fishComponent = other.gameObject.GetComponent<Fish>();
+
+            if (fishComponent != null)
+            {   // if the fish is hooked then destroy it
+                hooked_fish = fishComponent.is_hooked;
+                if (hooked_fish)
+                {
+                    fishComponent.DestroyFish();
+                }
+            }
         }
     }
 }
