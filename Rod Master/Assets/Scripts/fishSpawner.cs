@@ -19,6 +19,8 @@ public class fishSpawner : MonoBehaviour
     [SerializeField]
     private GameObject swordFish;
 
+    [SerializeField]
+    private GameObject tuna;
 
 
     int[] options = {8,-8};
@@ -31,6 +33,7 @@ public class fishSpawner : MonoBehaviour
         StartCoroutine(spawnFish(sardine.GetComponent<Fish>().spawntimer, sardine));
         StartCoroutine(spawnFish(sunFish.GetComponent<Fish>().spawntimer, sunFish));
         StartCoroutine(spawnFish(puffer.GetComponent<Fish>().spawntimer, swordFish));
+        StartCoroutine(spawnFish(puffer.GetComponent<Fish>().spawntimer, tuna));
     }
 
     private IEnumerator spawnFish(float interval, GameObject fish)
