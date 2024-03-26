@@ -175,11 +175,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8401461804221114797, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+--- !u!114 &192057406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8401461804221114797, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+  m_PrefabInstance: {fileID: 192057405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &772205531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,6 +251,10 @@ PrefabInstance:
       propertyPath: fishCaughtText
       value: 
       objectReference: {fileID: 1633028405}
+    - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+      propertyPath: moneyOwnedText
+      value: 
+      objectReference: {fileID: 192057406}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
