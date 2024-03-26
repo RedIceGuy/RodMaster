@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         SetNewRod();
+
+        // fishCaughtText = GameObject.Find("FishCaughtText").GetComponent<TMPro.TextMeshProUGUI>();
+        // Debug.Log(fishCaughtText.name);
+        // moneyOwnedText = GameObject.Find("moneyOwnedText").GetComponentInChildren<TMPro.TextMeshProUGUI>();
+        // Debug.Log(moneyOwnedText.name);
     }
 
     void SetNewRod() {
@@ -105,12 +110,15 @@ public class GameManager : MonoBehaviour
 
     public void DisplayFishCaughtText(GameObject fishCaught) {
         Fish fish = fishCaught.GetComponent<Fish>();
+        Debug.Log(fishCaughtText);
         fishCaughtText.text = string.Format(BASE_FISH_CAUGHT_TEXT, fish.name, fish.value);
         fishCaughtText.gameObject.SetActive(true);
         StartCoroutine(DisableAfterTimeout(fishCaughtText.gameObject, 1.0f));
     }
     void UpdateMoneyOwned() {
-        moneyOwnedText.text = string.Format(BASE_MONEY_OWNED_TEXT, currency);
+        if (moneyOwnedText) {
+            moneyOwnedText.text = string.Format(BASE_MONEY_OWNED_TEXT, currency);
+        }
     }
 
     IEnumerator DisableAfterTimeout(GameObject obj, float timer) {
