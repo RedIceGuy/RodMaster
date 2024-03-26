@@ -12,6 +12,7 @@ public class EquipButton : MonoBehaviour
 
     readonly string equipped = "Equipped";
     readonly string equip = "Equip";
+    readonly string notOwned = "Not Owned";
     private void Awake() {
         gm = GameManager.Instance;
         sl = ShopLogic.Instance;
@@ -27,7 +28,7 @@ public class EquipButton : MonoBehaviour
             }
         // Player doesn't own the corresponding fishing rod
         } else {
-            equipText.text = equip;
+            equipText.text = notOwned;
             button.interactable = false;
         }
     }
