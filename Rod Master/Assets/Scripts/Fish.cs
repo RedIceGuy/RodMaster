@@ -1,11 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
+    public enum FishType{
+        Big,
+        Medium,
+        Small,
+    }
+
+
     public Transform fish;
+    public FishType fishType;
     public int speed = 10;
     public float spawntimer;
     public int value;
