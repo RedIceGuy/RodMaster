@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1169250305825784277, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3536047944556479077, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 389.6694
@@ -173,6 +177,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3536047944556479077, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325340434377281288, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325340434377281288, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_TagString
+      value: FishCaughtText
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325340434377281288, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553667036285160031, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_TagString
+      value: MoneyOwnedText
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553667036285160031, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420795577318788769, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

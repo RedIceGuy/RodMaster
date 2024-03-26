@@ -175,6 +175,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4325340434377281288, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553667036285160031, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_Name
+      value: MoneyOwnedText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

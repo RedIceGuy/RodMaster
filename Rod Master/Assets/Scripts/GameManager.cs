@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,10 +41,28 @@ public class GameManager : MonoBehaviour
         }
         SetNewRod();
 
-        // fishCaughtText = GameObject.Find("FishCaughtText").GetComponent<TMPro.TextMeshProUGUI>();
-        // Debug.Log(fishCaughtText.name);
-        // moneyOwnedText = GameObject.Find("moneyOwnedText").GetComponentInChildren<TMPro.TextMeshProUGUI>();
-        // Debug.Log(moneyOwnedText.name);
+        // Subscribe to the sceneLoaded event
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // Since some UI elements haven't been created when the GM's Awake() method is called
+    // we need to wait until the scene is fully loaded to fix the references
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        // Due to how references between scenes are handled with DontDestroyOnLoad it's required
+        // to rediscover references in the current scene. 
+        // Since GameObject.Find can only locate active objects in the scene we need to manually
+        // set the object to be inactive as soon as we find a reference to it.
+        GameObject fishCaught = GameObject.FindGameObjectWithTag("FishCaughtText");
+        if (fishCaught != null) {
+            fishCaughtText = fishCaught.GetComponent<TMPro.TextMeshProUGUI>();
+            fishCaught.SetActive(false);
+        }
+
+        GameObject moneyOwned = GameObject.FindGameObjectWithTag("MoneyOwnedText");
+        if (moneyOwned != null) {
+            moneyOwnedText = moneyOwned.GetComponent<TMPro.TextMeshProUGUI>();
+        }
+
     }
 
     void SetNewRod() {
@@ -110,7 +128,6 @@ public class GameManager : MonoBehaviour
 
     public void DisplayFishCaughtText(GameObject fishCaught) {
         Fish fish = fishCaught.GetComponent<Fish>();
-        Debug.Log(fishCaughtText);
         fishCaughtText.text = string.Format(BASE_FISH_CAUGHT_TEXT, fish.name, fish.value);
         fishCaughtText.gameObject.SetActive(true);
         StartCoroutine(DisableAfterTimeout(fishCaughtText.gameObject, 1.0f));

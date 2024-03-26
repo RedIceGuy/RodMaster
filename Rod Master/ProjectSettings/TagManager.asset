@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Junk
   - Fish
+  - FishCaughtText
+  - MoneyOwnedText
   layers:
   - Default
   - TransparentFX
