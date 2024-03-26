@@ -3,6 +3,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+    // Used to replace the player's fishing rod when upgraded.
+    // Needs to be stored in a static variable to prevent Unity from only spawning the base rod
+    private static GameObject staticEquippedRod;
     bool fishingMode = true;
     public float fishCatchHeight;
 
@@ -14,9 +17,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance {
         get {
-            if(_instance == null) {
-                // Debug.Log("GameManager is NULL");
-            }
             return _instance;
         }
     }
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void Awake() {
         if (_instance == null) {
             _instance = this;
+            staticEquippedRod = equippedRod;
             DontDestroyOnLoad(gameObject);
         }
         else if (_instance != this) {
@@ -35,9 +36,7 @@ public class GameManager : MonoBehaviour
     void SetNewRod() {
         GameObject p = GameObject.Find("RodPivot");
         // Only need to update the rod if we are in a fishing level
-        // Debug.Log("SetNewRod");
         if (p) {
-            // Debug.Log("P exists");
             // Remove old rod
             Transform oldRodTransform = null;
             foreach (Transform child in p.transform) {  
@@ -45,9 +44,11 @@ public class GameManager : MonoBehaviour
                 Destroy(child.gameObject);
             }
             // Set new rod as child
-            GameObject rod = Instantiate(equippedRod, p.transform);
+            GameObject rod = Instantiate(staticEquippedRod, p.transform);
+            // Inherit the transform values
             if (oldRodTransform) {
                 rod.transform.SetPositionAndRotation(oldRodTransform.position, Quaternion.identity);
+                rod.transform.localScale = oldRodTransform.localScale;
             }
         }
     }
@@ -56,7 +57,6 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             ToggleFishingMode();
-            // Debug.Log(fishingMode ? "Fishing!" : "Moving!");
         }
     }
 
@@ -67,9 +67,9 @@ public class GameManager : MonoBehaviour
     void ToggleFishingMode() {
         fishingMode = !fishingMode;
     }
-    void UpgradeFishingRod(GameObject betterRod, int price) {
+    void UpgradeFishingRod(GameObject rod, int price) {
         currency -= price;
-        equippedRod = betterRod;
+        SetEquippedRod(rod);
     }
 
     void UpdateCurrency() {
@@ -86,5 +86,10 @@ public class GameManager : MonoBehaviour
     public void SetCurrencyText(TMPro.TextMeshProUGUI text) {
         currencyText = text;
         UpdateCurrency();
+    }
+
+    public void SetEquippedRod(GameObject rod) {
+        equippedRod = rod;
+        staticEquippedRod = rod;
     }
 }
