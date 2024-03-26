@@ -5,9 +5,6 @@ using UnityEngine;
 public class fishSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject sunFish;
-
-    [SerializeField]
     private GameObject puffer;
 
     [SerializeField]
@@ -15,6 +12,12 @@ public class fishSpawner : MonoBehaviour
 
     [SerializeField]
     private GameObject sardine;
+
+    [SerializeField]
+    private GameObject sunFish;
+
+    [SerializeField]
+    private GameObject swordFish;
 
 
 
@@ -27,6 +30,7 @@ public class fishSpawner : MonoBehaviour
         StartCoroutine(spawnFish(clownFish.GetComponent<Fish>().spawntimer, clownFish));
         StartCoroutine(spawnFish(sardine.GetComponent<Fish>().spawntimer, sardine));
         StartCoroutine(spawnFish(sunFish.GetComponent<Fish>().spawntimer, sunFish));
+        StartCoroutine(spawnFish(puffer.GetComponent<Fish>().spawntimer, swordFish));
     }
 
     private IEnumerator spawnFish(float interval, GameObject fish)
