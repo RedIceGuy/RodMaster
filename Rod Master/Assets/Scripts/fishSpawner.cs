@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FishSpawner1 : MonoBehaviour
+public class FishSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] fishesToSpawn;
     readonly int[] options = {8, -8};
