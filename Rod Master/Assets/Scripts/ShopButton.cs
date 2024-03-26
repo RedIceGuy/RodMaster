@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ShopButton : MonoBehaviour
@@ -30,6 +31,7 @@ public class ShopButton : MonoBehaviour
         gm.PurchaseRod(RodToPurchase, price);
         sl.ownedFishingRods.Add(RodToPurchase);
         RodBought();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void RodBought() {

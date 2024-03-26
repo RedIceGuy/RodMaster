@@ -69,8 +69,7 @@ public class GameManager : MonoBehaviour
     }
     void UpgradeFishingRod(GameObject rod, int price) {
         currency -= price;
-        equippedRod = rod;
-        staticEquippedRod = rod;
+        SetEquippedRod(rod);
     }
 
     void UpdateCurrency() {
@@ -80,7 +79,6 @@ public class GameManager : MonoBehaviour
     public void PurchaseRod(GameObject rod, int price) {
         if (currency >= price) {
             UpgradeFishingRod(rod, price);
-            Debug.Log(equippedRod);
         }
         UpdateCurrency();
     }
@@ -88,5 +86,10 @@ public class GameManager : MonoBehaviour
     public void SetCurrencyText(TMPro.TextMeshProUGUI text) {
         currencyText = text;
         UpdateCurrency();
+    }
+
+    public void SetEquippedRod(GameObject rod) {
+        equippedRod = rod;
+        staticEquippedRod = rod;
     }
 }
