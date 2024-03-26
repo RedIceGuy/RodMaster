@@ -3,6 +3,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+    // Used to replace the player's fishing rod when upgraded.
+    // Needs to be stored in a static variable to prevent Unity from only spawning the base rod
+    private static GameObject staticEquippedRod;
     bool fishingMode = true;
     public float fishCatchHeight;
 
@@ -21,17 +24,17 @@ public class GameManager : MonoBehaviour
     private void Awake() {
         if (_instance == null) {
             _instance = this;
+            staticEquippedRod = equippedRod;
             DontDestroyOnLoad(gameObject);
         }
         else if (_instance != this) {
             Destroy(gameObject);
         }
-        BoatRod();
+        SetNewRod();
     }
 
     void SetNewRod() {
         GameObject p = GameObject.Find("RodPivot");
-        Debug.Log(equippedRod);
         // Only need to update the rod if we are in a fishing level
         if (p) {
             // Remove old rod
@@ -41,28 +44,13 @@ public class GameManager : MonoBehaviour
                 Destroy(child.gameObject);
             }
             // Set new rod as child
-            GameObject rod = Instantiate(equippedRod, p.transform);
+            GameObject rod = Instantiate(staticEquippedRod, p.transform);
+            // Inherit the transform values
             if (oldRodTransform) {
                 rod.transform.SetPositionAndRotation(oldRodTransform.position, Quaternion.identity);
+                rod.transform.localScale = oldRodTransform.localScale;
             }
         }
-    }
-
-    void Rod() {
-        // Get the parent of the fishing rod
-        GameObject pivot = GameObject.Find("RodPivot");
-        
-        // TODO: Try removing the rod from the boat prefab and use the GM to instantiate the everytime rod instead
-        foreach (Transform oldRod in pivot.transform) {
-            // PrefabUtility.ReplacePrefabAssetOfPrefabInstance(PrefabUtility.ConvertToPrefabInstance(oldRod.gameObject, pivot, ConvertToPrefabInstanceSettings.Equals, InteractionMode.AutomatedAction), equippedRod, InteractionMode.AutomatedAction);
-        }
-        // GameObject oldRod = PrefabUtility.GetCorrespondingObjectFromSource(gameObject)
-    }
-
-    void BoatRod() {
-        // Get the parent of the fishing rod
-        GameObject pivot = GameObject.Find("RodPivot");
-        Instantiate(equippedRod, pivot.transform);
     }
 
     void Update()
@@ -79,9 +67,10 @@ public class GameManager : MonoBehaviour
     void ToggleFishingMode() {
         fishingMode = !fishingMode;
     }
-    void UpgradeFishingRod(GameObject betterRod, int price) {
+    void UpgradeFishingRod(GameObject rod, int price) {
         currency -= price;
-        equippedRod = betterRod;
+        equippedRod = rod;
+        staticEquippedRod = rod;
     }
 
     void UpdateCurrency() {
