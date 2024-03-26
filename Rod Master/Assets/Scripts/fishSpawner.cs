@@ -5,9 +5,6 @@ using UnityEngine;
 public class fishSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject sunFish;
-
-    [SerializeField]
     private GameObject puffer;
 
     [SerializeField]
@@ -15,6 +12,12 @@ public class fishSpawner : MonoBehaviour
 
     [SerializeField]
     private GameObject sardine;
+
+    [SerializeField]
+    private GameObject sunFish;
+
+    [SerializeField]
+    private GameObject swordFish;
 
 
 
@@ -27,12 +30,15 @@ public class fishSpawner : MonoBehaviour
         StartCoroutine(spawnFish(clownFish.GetComponent<Fish>().spawntimer, clownFish));
         StartCoroutine(spawnFish(sardine.GetComponent<Fish>().spawntimer, sardine));
         StartCoroutine(spawnFish(sardine.GetComponent<Fish>().spawntimer, sunFish));
+        StartCoroutine(spawnFish(puffer.GetComponent<Fish>().spawntimer, swordFish));
     }
 
     private IEnumerator spawnFish(float interval, GameObject fish)
     {
         yield return new WaitForSeconds(interval);
-        Instantiate(fish, new Vector3(options[Random.Range(0,2)],Random.Range(-4f,2.5f),0), Quaternion.identity);
+        Instantiate(fish, new Vector3(options[Random.Range(0,2)],
+        Random.Range(fish.GetComponent<Fish>().min_y,fish.GetComponent<Fish>().max_y),0), Quaternion.identity);
+        
         StartCoroutine(spawnFish(interval,fish));
     }
 }

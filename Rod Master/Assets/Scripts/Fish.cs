@@ -12,6 +12,8 @@ public class Fish : MonoBehaviour
     private bool is_hooked = false;
     private bool bitten = false;
     private Hook hook;
+    public float min_y = -4f;
+    public float max_y = 2.5f;
     GameManager gm;
 
     private void Awake() {
