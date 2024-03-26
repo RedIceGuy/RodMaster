@@ -123,9 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 3014348068889676675}
   speed: 3
-  spawntimer: 5
+  spawntimer: 4.5
   value: 100
-  min_y: -4
+  min_y: -1
   max_y: 1.5
 --- !u!50 &6490247368132841150
 Rigidbody2D:
