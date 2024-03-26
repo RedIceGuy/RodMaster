@@ -55,12 +55,13 @@ public class Fish : MonoBehaviour
     }
 
     public void DestroyFish(){
-       Destroy(gameObject);
        // Hook can catch another fish
+       Instantiate(Resources.Load("BLOOD"), transform.position, Quaternion.identity);
             if (hook != null)
             {
                 hook.hooked = false;
             } 
+        Destroy(gameObject);
     }
 
     public void OnTriggerEnter2D(Collider2D other){
