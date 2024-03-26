@@ -7,13 +7,13 @@ public class Fish : MonoBehaviour
 {
     public Transform fish;
     public int speed = 10;
-    public float spawntimer = 3.5f;
+    public float spawntimer;
     public int value;
     private bool is_hooked = false;
     private bool bitten = false;
     private Hook hook;
     public float min_y = -4f;
-    public float max_y = 2.5f;
+    public float max_y = 1.5f;
     GameManager gm;
 
     private void Awake() {
@@ -62,6 +62,7 @@ public class Fish : MonoBehaviour
                     hook.hooked = true;
                     fish.transform.Rotate(0f,0f,90f);
                     fish.transform.parent = other.transform;
+                    fish.transform.position = other.transform.position;
                     is_hooked = true;
                 }
             }

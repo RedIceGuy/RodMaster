@@ -20,7 +20,7 @@ public class junkSpawner : MonoBehaviour
     private IEnumerator spawnJunk(float interval, GameObject junk)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newFish = Instantiate(junk, new Vector3(options[Random.Range(0,2)],Random.Range(-5f,5),0), Quaternion.identity);
+        GameObject newFish = Instantiate(junk, new Vector3(options[Random.Range(0,2)],Random.Range(-4f,2),0), Quaternion.identity);
         StartCoroutine(spawnJunk(interval,junk));
     }
 }

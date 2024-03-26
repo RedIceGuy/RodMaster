@@ -125,6 +125,8 @@ MonoBehaviour:
   speed: 4
   spawntimer: 3.5
   value: 50
+  min_y: -4
+  max_y: 2
 --- !u!50 &2086036444035586700
 Rigidbody2D:
   serializedVersion: 4

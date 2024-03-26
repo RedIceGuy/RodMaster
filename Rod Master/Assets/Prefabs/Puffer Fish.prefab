@@ -105,7 +105,7 @@ MonoBehaviour:
   spawntimer: 5
   value: 20
   min_y: -4
-  max_y: -1
+  max_y: 1
 --- !u!95 &8193031039598278398
 Animator:
   serializedVersion: 5
