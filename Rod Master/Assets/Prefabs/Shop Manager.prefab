@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4021879808358351826
+--- !u!1 &681400491372939182
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2925276435800151733}
-  - component: {fileID: 6512396880870161528}
+  - component: {fileID: 188295415318539012}
+  - component: {fileID: 1238308718955695172}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: Shop Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2925276435800151733
+--- !u!4 &188295415318539012
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021879808358351826}
+  m_GameObject: {fileID: 681400491372939182}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.630851, y: -1.3949624, z: 0.011753222}
+  m_LocalPosition: {x: 602.3649, y: 602.63965, z: -6.131004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6512396880870161528
+--- !u!114 &1238308718955695172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021879808358351826}
+  m_GameObject: {fileID: 681400491372939182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61adf8ff716192a489bb9994c55d6048, type: 3}
+  m_Script: {fileID: 11500000, guid: 53777cc33483ba84aa0cbb3e2afbdf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishCatchHeight: 0
-  currencyText: {fileID: 3335497613147433645, guid: 5b4c55d4278b498438ebc1d4b50a1d45, type: 3}
-  currency: 500
-  equippedRod: {fileID: 3251373346199778732, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
+  currencyText: {fileID: 0}
+  ownedFishingRods:
+  - {fileID: 3251373346199778732, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}

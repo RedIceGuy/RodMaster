@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7800345280061911153}
   - component: {fileID: 1414451171524390997}
+  - component: {fileID: -2033149685286550575}
   m_Layer: 0
   m_Name: BaseRod
   m_TagString: Untagged
@@ -84,3 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2033149685286550575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3251373346199778732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0eb941e5c58764997cffbda6e70a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FishingLineHealth: 100
+  HookSpeed: 2
