@@ -49,6 +49,7 @@ public class Fish : MonoBehaviour
         {
             gm.currency += value;
             // TODO should destroy and add currency for player
+            gm.DisplayFishCaughtText(gameObject);
             DestroyFish();
         }
         

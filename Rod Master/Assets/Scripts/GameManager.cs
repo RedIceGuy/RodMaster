@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,6 +16,13 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI currencyText;
     public int currency;
     public GameObject equippedRod;
+
+    [Header("Level variables")]
+    readonly string BASE_MONEY_OWNED_TEXT = "Money owned: ${0}";
+    public TMPro.TextMeshProUGUI moneyOwnedText;
+    readonly string BASE_FISH_CAUGHT_TEXT = "Caught a {0}\n+${1}";
+    public TMPro.TextMeshProUGUI fishCaughtText;
+
 
     public static GameManager Instance {
         get {
@@ -58,6 +67,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             ToggleFishingMode();
         }
+        UpdateMoneyOwned();
     }
 
     public bool GetFishingMode() {
@@ -91,5 +101,20 @@ public class GameManager : MonoBehaviour
     public void SetEquippedRod(GameObject rod) {
         equippedRod = rod;
         staticEquippedRod = rod;
+    }
+
+    public void DisplayFishCaughtText(GameObject fishCaught) {
+        Fish fish = fishCaught.GetComponent<Fish>();
+        fishCaughtText.text = string.Format(BASE_FISH_CAUGHT_TEXT, fish.name, fish.value);
+        fishCaughtText.gameObject.SetActive(true);
+        StartCoroutine(DisableAfterTimeout(fishCaughtText.gameObject, 1.0f));
+    }
+    void UpdateMoneyOwned() {
+        moneyOwnedText.text = string.Format(BASE_MONEY_OWNED_TEXT, currency);
+    }
+
+    IEnumerator DisableAfterTimeout(GameObject obj, float timer) {
+        yield return new WaitForSeconds(timer);
+        obj.SetActive(false);
     }
 }
