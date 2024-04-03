@@ -15,18 +15,15 @@ public class ChargeBar : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     // Player releases the charge button
     public void OnPointerUp(PointerEventData eventData) {
         isCharging = false;
-        chargingText.gameObject.SetActive(false);
     }
 
     // Player is holding the charge button
     public void OnPointerDown(PointerEventData eventData) {
         isCharging = true;
-        chargingText.gameObject.SetActive(true);
     }
 
     void Update() {
         if (isCharging && currentCharge < maxCharge) {
-            Debug.Log("Charging");
             currentCharge += chargeIncrement * Time.deltaTime;
         } 
         else if (isCharging && currentCharge > maxCharge) {
