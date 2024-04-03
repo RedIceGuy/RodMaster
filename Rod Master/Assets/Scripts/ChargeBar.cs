@@ -1,10 +1,12 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ChargeBar : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField] TMP_Text chargingText;
+    [SerializeField] Slider chargingSlider;
     [SerializeField] float chargeIncrement;
     [SerializeField] float currentCharge;
     [SerializeField] float maxCharge = 100.0f;
@@ -22,13 +24,14 @@ public class ChargeBar : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         chargingText.gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update() {
         if (isCharging && currentCharge < maxCharge) {
+            Debug.Log("Charging");
             currentCharge += chargeIncrement * Time.deltaTime;
         } 
         else if (isCharging && currentCharge > maxCharge) {
             currentCharge = maxCharge;
         }
+        chargingSlider.value = currentCharge;
     }
 }
