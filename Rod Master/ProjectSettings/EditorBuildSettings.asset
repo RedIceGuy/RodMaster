@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameMenu.unity
     guid: ebf081611f12c1b428405dec3f14ef7c
+  - enabled: 1
+    path: Assets/Scenes/FishGlossary.unity
+    guid: e0b3517a54a18794ab51e4b1152eef88
   m_configObjects: {}
