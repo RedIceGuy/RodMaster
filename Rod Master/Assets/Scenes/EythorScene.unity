@@ -175,6 +175,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4449433367502252415, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_Mass
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449433367502252415, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449433367502252415, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563300005386533413, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_TagString
+      value: Boat
+      objectReference: {fileID: 0}
     - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -389.66278

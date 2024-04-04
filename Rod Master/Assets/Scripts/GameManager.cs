@@ -179,7 +179,8 @@ public class GameManager : MonoBehaviour
         hookThrown = true;
     }
 
-    void RetrieveHook() {
+    public void RetrieveHook() {
+        Debug.Log("Retrieving");
         Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
         hrb.isKinematic = true;
         chargeBarObject.GetComponent<ChargeBar>().HookRetrieved();

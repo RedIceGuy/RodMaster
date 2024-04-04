@@ -9,6 +9,7 @@ TagManager:
   - FishCaughtText
   - MoneyOwnedText
   - OceanBed
+  - Boat
   layers:
   - Default
   - TransparentFX
