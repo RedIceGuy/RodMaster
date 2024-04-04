@@ -1,5 +1,7 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ChargeBar : MonoBehaviour
@@ -14,11 +16,16 @@ public class ChargeBar : MonoBehaviour
     bool canCharge;
 
     void Awake() {
-        gm = GameManager.Instance;
         // Prevent the player from "dragging" the charging bar
         chargingSlider.enabled = false;
         canCharge = true;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        gm = GameManager.Instance;
+    }
+
 
     void Update() {
         if(!canCharge) {
