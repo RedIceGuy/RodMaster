@@ -11,18 +11,19 @@ public class ChargeBar : MonoBehaviour
     [SerializeField] float currentCharge;
     [SerializeField] float maxCharge = 100.0f;
     [SerializeField] bool isCharging;
-    public bool canCharge = true;
+    bool canCharge;
 
     void Awake() {
         gm = GameManager.Instance;
         // Prevent the player from "dragging" the charging bar
         chargingSlider.enabled = false;
+        canCharge = true;
     }
 
     void Update() {
-        // if(!canCharge) {
-        //     return;
-        // }
+        if(!canCharge) {
+            return;
+        }
 
         isCharging = Input.GetKey(KeyCode.Mouse0);
 
@@ -36,5 +37,18 @@ public class ChargeBar : MonoBehaviour
         chargingSlider.value = currentCharge;
         // Update the charge for gameplay
         gm.rodPowerCharge = currentCharge;
+    }
+
+    public void HookThrown() {
+        canCharge = false;
+        chargingText.gameObject.SetActive(false);
+        chargingSlider.gameObject.SetActive(false);
+    }
+
+    public void HookRetrieved() {
+        canCharge = true;
+        chargingSlider.value = 0;
+        chargingText.gameObject.SetActive(true);
+        chargingSlider.gameObject.SetActive(true);
     }
 }

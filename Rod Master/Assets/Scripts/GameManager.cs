@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     // Needs to be stored in a static variable to prevent Unity from only spawning the base rod
     private static GameObject staticEquippedRod;
     [SerializeField] GameObject hookObject;
+    [SerializeField] GameObject chargeBarObject;
     bool fishingMode = true;
+    public bool hookThrown = false;
     public float fishCatchHeight;
     public float rodPowerCharge;
 
@@ -90,14 +92,14 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) && !hookThrown) {
             ToggleFishingMode();
         }
         UpdateMoneyOwned();
 
         // TODO: Implement more conditions for throwing the line
         // Throw the fishing line
-        if (fishingMode && Input.GetKeyUp(KeyCode.Mouse0)) {
+        if (fishingMode && !hookThrown && Input.GetKeyUp(KeyCode.Mouse0)) {
             CastHook();
         }
     }
@@ -167,8 +169,17 @@ public class GameManager : MonoBehaviour
     void CastHook() {
         Vector3 castingAngle = CalculateCastingAngle();
         Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
-        Debug.Log(castingAngle);
-        hrb.velocity = rodPowerCharge * castingAngle * 10;
-        Debug.Log(hrb.velocity);
+        float throwMultiplier = 10.0f;
+        hrb.isKinematic = false;
+        hrb.velocity = throwMultiplier * rodPowerCharge * castingAngle;
+        chargeBarObject.GetComponent<ChargeBar>().HookThrown();
+        hookThrown = true;
+    }
+
+    void RetrieveHook() {
+        Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
+        hrb.isKinematic = true;
+        chargeBarObject.GetComponent<ChargeBar>().HookRetrieved();
+        hookThrown = false;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Hook : MonoBehaviour
 {
@@ -8,13 +9,22 @@ public class Hook : MonoBehaviour
     public bool hooked = false;
     [SerializeField] float tapBuffer;
     bool canTap = true;
+    GameManager gm;
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        gm = GameManager.Instance;
+    }
 
     private void Awake() {
         clickSpeed = holdSpeed * 3.0f;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Update()
     {
+        if (!gm.hookThrown) {
+            return;
+        }
         // float verticalInput = Input.GetAxis("Vertical");
         Vector2 movement = Vector2.zero;
         // Detect rapid clicking of the mouse button
