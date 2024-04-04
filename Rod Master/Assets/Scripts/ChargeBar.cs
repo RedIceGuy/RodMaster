@@ -10,8 +10,13 @@ public class ChargeBar : MonoBehaviour
     [SerializeField] float currentCharge;
     [SerializeField] float maxCharge = 100.0f;
     [SerializeField] bool isCharging;
+    public bool canCharge;
 
     void Update() {
+        if(!canCharge) {
+            return;
+        }
+
         isCharging = Input.GetKey(KeyCode.Mouse0);
 
         if (isCharging && currentCharge < maxCharge) {
