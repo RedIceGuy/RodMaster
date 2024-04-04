@@ -1,9 +1,8 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ChargeBar : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+public class ChargeBar : MonoBehaviour
 {
     [SerializeField] TMP_Text chargingText;
     [SerializeField] Slider chargingSlider;
@@ -11,18 +10,10 @@ public class ChargeBar : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     [SerializeField] float currentCharge;
     [SerializeField] float maxCharge = 100.0f;
     [SerializeField] bool isCharging;
-   
-    // Player releases the charge button
-    public void OnPointerUp(PointerEventData eventData) {
-        isCharging = false;
-    }
-
-    // Player is holding the charge button
-    public void OnPointerDown(PointerEventData eventData) {
-        isCharging = true;
-    }
 
     void Update() {
+        isCharging = Input.GetKey(KeyCode.Mouse0);
+
         if (isCharging && currentCharge < maxCharge) {
             currentCharge += chargeIncrement * Time.deltaTime;
         } 
