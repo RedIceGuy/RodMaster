@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+    [Header("Fishing variables")]
     // Used to replace the player's fishing rod when upgraded.
     // Needs to be stored in a static variable to prevent Unity from only spawning the base rod
     private static GameObject staticEquippedRod;
+    [SerializeField] GameObject hookObject;
     bool fishingMode = true;
     public float fishCatchHeight;
+    public float rodPowerCharge;
 
     [Header("Shop variables")]
     readonly string BASE_CURRENCY_TEXT = "Money owned: $";
@@ -91,6 +94,12 @@ public class GameManager : MonoBehaviour
             ToggleFishingMode();
         }
         UpdateMoneyOwned();
+
+        // TODO: Implement more conditions for throwing the line
+        // Throw the fishing line
+        if (fishingMode && Input.GetKeyUp(KeyCode.Mouse0)) {
+            CastHook();
+        }
     }
 
     public bool GetFishingMode() {
@@ -141,5 +150,25 @@ public class GameManager : MonoBehaviour
     IEnumerator DisableAfterTimeout(GameObject obj, float timer) {
         yield return new WaitForSeconds(timer);
         obj.SetActive(false);
+    }
+
+    Vector3 CalculateCastingAngle() {
+        Vector3 castingAngle;
+        Vector3 mousePos = Input.mousePosition;
+        // Prevent hook from escaping the 2D plane
+        mousePos.z = 0;
+        Vector3 hookPos = Camera.main.WorldToScreenPoint(hookObject.transform.position);
+        // Normalize the angle to prevent the distance of the mouse affecting the power calculation
+        castingAngle = (mousePos - hookPos).normalized;
+        return castingAngle;
+    }
+
+    // Maybe CastLine is a better name?
+    void CastHook() {
+        Vector3 castingAngle = CalculateCastingAngle();
+        Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
+        Debug.Log(castingAngle);
+        hrb.velocity = rodPowerCharge * castingAngle * 10;
+        Debug.Log(hrb.velocity);
     }
 }

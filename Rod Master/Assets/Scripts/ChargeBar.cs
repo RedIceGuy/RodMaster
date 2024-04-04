@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ChargeBar : MonoBehaviour
 {
+    GameManager gm;
     [SerializeField] TMP_Text chargingText;
     [SerializeField] Slider chargingSlider;
     [SerializeField] float chargeIncrement;
@@ -13,6 +14,7 @@ public class ChargeBar : MonoBehaviour
     public bool canCharge = true;
 
     void Awake() {
+        gm = GameManager.Instance;
         // Prevent the player from "dragging" the charging bar
         chargingSlider.enabled = false;
     }
@@ -30,6 +32,9 @@ public class ChargeBar : MonoBehaviour
         else if (isCharging && currentCharge > maxCharge) {
             currentCharge = maxCharge;
         }
+        // Update the charge visually
         chargingSlider.value = currentCharge;
+        // Update the charge for gameplay
+        gm.rodPowerCharge = currentCharge;
     }
 }
