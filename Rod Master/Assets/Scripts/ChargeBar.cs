@@ -10,12 +10,17 @@ public class ChargeBar : MonoBehaviour
     [SerializeField] float currentCharge;
     [SerializeField] float maxCharge = 100.0f;
     [SerializeField] bool isCharging;
-    public bool canCharge;
+    public bool canCharge = true;
+
+    void Awake() {
+        // Prevent the player from "dragging" the charging bar
+        chargingSlider.enabled = false;
+    }
 
     void Update() {
-        if(!canCharge) {
-            return;
-        }
+        // if(!canCharge) {
+        //     return;
+        // }
 
         isCharging = Input.GetKey(KeyCode.Mouse0);
 

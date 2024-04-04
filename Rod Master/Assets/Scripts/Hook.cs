@@ -21,7 +21,7 @@ public class Hook : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && canTap) {
             Debug.Log("Tapping");
             movement = clickSpeed * Time.deltaTime * Vector2.up;
-            StartCoroutine(TapCooldown(tapBuffer));
+            // StartCoroutine(TapCooldown(tapBuffer));
         }
         // Detect holding down mouse button
         else if (Input.GetKey(KeyCode.Mouse0)) {
