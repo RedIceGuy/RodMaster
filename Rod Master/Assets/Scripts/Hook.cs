@@ -48,4 +48,12 @@ public class Hook : MonoBehaviour
         yield return new WaitForSeconds(duration);
         canTap = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("OceanBed")) {
+            Rigidbody2D rb =GetComponent<Rigidbody2D>();
+            rb.isKinematic = true;
+            rb.velocity = Vector2.zero;
+        }
+    }
 }

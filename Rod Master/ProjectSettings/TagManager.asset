@@ -8,14 +8,15 @@ TagManager:
   - Fish
   - FishCaughtText
   - MoneyOwnedText
+  - OceanBed
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hook
   - Water
   - UI
-  - 
+  - OceanBed
   - 
   - 
   - 
