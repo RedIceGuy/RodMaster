@@ -167,12 +167,15 @@ public class GameManager : MonoBehaviour
 
     // Maybe CastLine is a better name?
     void CastHook() {
+        float throwMultiplier = 10.0f;
         Vector3 castingAngle = CalculateCastingAngle();
         Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
-        float throwMultiplier = 10.0f;
+
         hrb.isKinematic = false;
         hrb.velocity = throwMultiplier * rodPowerCharge * castingAngle;
         chargeBarObject.GetComponent<ChargeBar>().HookThrown();
+
+        hookObject.GetComponent<Hook>().SetReturnPosition(hookObject.transform.position);
         hookThrown = true;
     }
 

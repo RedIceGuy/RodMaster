@@ -9,6 +9,8 @@ public class Hook : MonoBehaviour
     public bool hooked = false;
     [SerializeField] float tapBuffer;
     bool canTap = true;
+    Vector2 returnPosition = Vector2.zero;
+    Vector2 returnVector = Vector2.up;
     GameManager gm;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
@@ -25,18 +27,21 @@ public class Hook : MonoBehaviour
         if (!gm.hookThrown) {
             return;
         }
-        // float verticalInput = Input.GetAxis("Vertical");
+        ReelIn();
+    }
+
+    void ReelIn() {
         Vector2 movement = Vector2.zero;
         // Detect rapid clicking of the mouse button
         if (Input.GetKeyDown(KeyCode.Mouse0) && canTap) {
             Debug.Log("Tapping");
-            movement = clickSpeed * Time.deltaTime * Vector2.up;
+            movement = clickSpeed * Time.deltaTime * returnVector;
             // StartCoroutine(TapCooldown(tapBuffer));
         }
         // Detect holding down mouse button
         else if (Input.GetKey(KeyCode.Mouse0)) {
             Debug.Log("Holding");
-            movement = holdSpeed * Time.deltaTime * Vector2.up;
+            movement = holdSpeed * Time.deltaTime * returnVector;
         }
 
         transform.Translate(movement);
@@ -52,8 +57,15 @@ public class Hook : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("OceanBed")) {
             Rigidbody2D rb =GetComponent<Rigidbody2D>();
+            // Disable dynamic physics upon reaching the OceanBed
             rb.isKinematic = true;
             rb.velocity = Vector2.zero;
+            // Calculate the path needed to return to the boat
+            returnVector = (returnPosition - new Vector2(transform.position.x, transform.position.y)).normalized;
         }
+    }
+
+    public void SetReturnPosition(Vector2 vec) {
+        returnPosition = vec;
     }
 }
