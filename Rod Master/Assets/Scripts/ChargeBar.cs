@@ -15,8 +15,9 @@ public class ChargeBar : MonoBehaviour
     bool canCharge;
 
     void Awake() {
+        gm = GameManager.Instance;
         // Prevent the player from "dragging" the charging bar
-        chargingSlider.enabled = false;
+        chargingSlider.interactable = false;
         canCharge = true;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

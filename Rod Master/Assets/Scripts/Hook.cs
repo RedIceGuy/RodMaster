@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Hook : MonoBehaviour
 {
+    GameManager gm;
     // Speed of reeling in while holding the button
     public float reelSpeed;
     // Multiplier for the reelSpeed if the player is tapping the button
@@ -12,19 +13,18 @@ public class Hook : MonoBehaviour
     public bool canReelIn = false;
     public bool hooked = false;
     [SerializeField] float tapBuffer;
-    bool canTap = true;
     Vector2 returnPosition = Vector2.zero;
     Vector2 returnVector = Vector2.up;
-    GameManager gm;
 
+
+    private void Awake() {
+        gm = GameManager.Instance;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         gm = GameManager.Instance;
         // Get the relevent hook speed 
         reelSpeed = gm.equippedRod.GetComponent<FishingRod>().HookSpeed;
-    }
-
-    private void Awake() {
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Update()
@@ -41,7 +41,7 @@ public class Hook : MonoBehaviour
         isReeling = true;
 
         // Detect rapid clicking of the mouse button
-        if (Input.GetKeyDown(KeyCode.Mouse0) && canTap) {
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
             // Reeling with an increased speed
             movement = tapSpeedMultiplier * reelSpeed * Time.deltaTime * returnVector;
         }
@@ -61,7 +61,7 @@ public class Hook : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("OceanBed")) {
+        if (other.CompareTag("OceanBed") || other.CompareTag("Fish")) {
             canReelIn = true;
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             // Disable dynamic physics upon reaching the OceanBed

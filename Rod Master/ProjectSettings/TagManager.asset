@@ -10,6 +10,7 @@ TagManager:
   - MoneyOwnedText
   - OceanBed
   - Boat
+  - ChargeBar
   layers:
   - Default
   - TransparentFX

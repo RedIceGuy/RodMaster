@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         }
         SetNewRod();
         canThrowHook = true;
+
         // Subscribe to the sceneLoaded event
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -70,10 +71,17 @@ public class GameManager : MonoBehaviour
             moneyOwnedText = moneyOwned.GetComponent<TMPro.TextMeshProUGUI>();
         }
 
+        GameObject charge = GameObject.FindGameObjectWithTag("ChargeBar");
+        if (charge) {
+            chargeBarObject = charge;
+        }
+
         GameObject hook = GameObject.FindGameObjectWithTag("Player");
         if (hook) {
             hookObject = hook;
             hookStartingPosition = hook.transform.position;
+            // Make sure hook is in starting state if scene was unloaded while fishing
+            RetrieveHook();
         }
     }
 
