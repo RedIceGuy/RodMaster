@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,9 +25,9 @@ public class ChargeBar : MonoBehaviour
         gm = GameManager.Instance;
     }
 
-
     void Update() {
-        if(!canCharge) {
+        // Prevent charging outside of the casting state
+        if(!canCharge || !gm.canThrowHook) {
             return;
         }
 
@@ -50,6 +49,7 @@ public class ChargeBar : MonoBehaviour
         canCharge = false;
         chargingText.gameObject.SetActive(false);
         chargingSlider.gameObject.SetActive(false);
+        currentCharge = 0;
     }
 
     public void HookRetrieved() {

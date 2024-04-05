@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject hookObject;
     [SerializeField] GameObject chargeBarObject;
     bool fishingMode = true;
+    public bool canThrowHook;
+    Vector3 hookStartingPosition;
     public bool hookThrown = false;
     public float fishCatchHeight;
     public float rodPowerCharge;
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         SetNewRod();
-
+        canThrowHook = true;
         // Subscribe to the sceneLoaded event
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -55,8 +57,8 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         // Due to how references between scenes are handled with DontDestroyOnLoad it's required
         // to rediscover references in the current scene. 
-        // Since GameObject.Find can only locate active objects in the scene we need to manually
-        // set the object to be inactive as soon as we find a reference to it.
+        // Since GameObject.Find can only locate "active" objects in the scene we need to manually
+        // set the object to be "inactive" as soon as we find a reference to it.
         GameObject fishCaught = GameObject.FindGameObjectWithTag("FishCaughtText");
         if (fishCaught != null) {
             fishCaughtText = fishCaught.GetComponent<TMPro.TextMeshProUGUI>();
@@ -68,8 +70,14 @@ public class GameManager : MonoBehaviour
             moneyOwnedText = moneyOwned.GetComponent<TMPro.TextMeshProUGUI>();
         }
 
+        GameObject hook = GameObject.FindGameObjectWithTag("Player");
+        if (hook) {
+            hookObject = hook;
+            hookStartingPosition = hook.transform.position;
+        }
     }
 
+    // Ugly function to replace the player's fishing rod after equipping a new one
     void SetNewRod() {
         GameObject p = GameObject.Find("RodPivot");
         // Only need to update the rod if we are in a fishing level
@@ -97,9 +105,13 @@ public class GameManager : MonoBehaviour
         }
         UpdateMoneyOwned();
 
-        // TODO: Implement more conditions for throwing the line
         // Throw the fishing line
-        if (fishingMode && !hookThrown && Input.GetKeyUp(KeyCode.Mouse0)) {
+        if (
+            canThrowHook && 
+            fishingMode && 
+            !hookThrown && 
+            Input.GetKeyUp(KeyCode.Mouse0)
+        ) {
             CastHook();
         }
     }
@@ -165,7 +177,6 @@ public class GameManager : MonoBehaviour
         return castingAngle;
     }
 
-    // Maybe CastLine is a better name?
     void CastHook() {
         float throwMultiplier = 10.0f;
         Vector3 castingAngle = CalculateCastingAngle();
@@ -176,14 +187,23 @@ public class GameManager : MonoBehaviour
         chargeBarObject.GetComponent<ChargeBar>().HookThrown();
 
         hookObject.GetComponent<Hook>().SetReturnPosition(hookObject.transform.position);
+        canThrowHook = false;
         hookThrown = true;
     }
 
     public void RetrieveHook() {
-        Debug.Log("Retrieving");
         Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
         hrb.isKinematic = true;
         chargeBarObject.GetComponent<ChargeBar>().HookRetrieved();
         hookThrown = false;
+        // Return the hook to its starting position
+        hookObject.transform.position = hookStartingPosition;
+        StartCoroutine(HookBuffer(0.5f));
+    }
+
+    // Prevent the player from charging a throw instantly after retrieving the hook
+    IEnumerator HookBuffer(float duration) {
+        yield return new WaitForSeconds(duration);
+        canThrowHook = true;
     }
 }

@@ -1,17 +1,15 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Hook : MonoBehaviour
 {
     // Speed of reeling in while holding the button
-    public float reelSpeed = 5.0f;
+    public float reelSpeed;
     // Multiplier for the reelSpeed if the player is tapping the button
-    [SerializeField] float tapSpeedMultiplier = 2.0f;
+    [SerializeField] float tapSpeedMultiplier = 8.0f;
     // Flag to track whether the player is reeling the line in
     bool isReeling;
     public bool canReelIn = false;
-
     public bool hooked = false;
     [SerializeField] float tapBuffer;
     bool canTap = true;
@@ -44,8 +42,6 @@ public class Hook : MonoBehaviour
 
         // Detect rapid clicking of the mouse button
         if (Input.GetKeyDown(KeyCode.Mouse0) && canTap) {
-            StartCoroutine(TapCooldown(tapBuffer));
-
             // Reeling with an increased speed
             movement = tapSpeedMultiplier * reelSpeed * Time.deltaTime * returnVector;
         }
@@ -62,13 +58,6 @@ public class Hook : MonoBehaviour
         if (isReeling) {
             transform.Translate(movement);
         }
-    }
-
-    // Cooldown between taps to differentiate between taps and holds
-    IEnumerator TapCooldown(float duration) {
-        canTap = false;
-        yield return new WaitForSeconds(duration);
-        canTap = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

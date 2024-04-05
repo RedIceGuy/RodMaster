@@ -9,7 +9,6 @@ public class Fish : MonoBehaviour
         Small,
     }
 
-
     public Transform fish;
     public FishType fishType;
     public int speed = 10;
@@ -36,18 +35,12 @@ public class Fish : MonoBehaviour
         StartCoroutine(DestroyAfterDelay());
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!is_hooked)
         {
             fish.transform.position += speed * Time.deltaTime * transform.right;
         }
-        if (fish.transform.position.y >= gm.fishCatchHeight)
-        {
-            FishCaught();
-        }
-        
     }
 
     public void DestroyFish(){
@@ -94,7 +87,7 @@ public class Fish : MonoBehaviour
 
     IEnumerator DestroyAfterDelay(){
         yield return new WaitForSeconds(10f);
-        // is fish is not hooked destroy it
+        // If fish is not hooked, destroy it
         if (!is_hooked)
         {
             Destroy(gameObject);
