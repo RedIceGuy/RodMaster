@@ -174,6 +174,15 @@ public class GameManager : MonoBehaviour
         obj.SetActive(false);
     }
 
+    public IEnumerator DestroyAfterTimeout(GameObject obj, float timer) {
+        yield return new WaitForSeconds(timer);
+        Destroy(obj);
+    }
+    public IEnumerator DestroyAfterTimeout(Object obj, float timer) {
+        yield return new WaitForSeconds(timer);
+        Destroy(obj);
+    }
+
     Vector3 CalculateCastingAngle() {
         Vector3 castingAngle;
         Vector3 mousePos = Input.mousePosition;

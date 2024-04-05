@@ -44,8 +44,8 @@ public class Fish : MonoBehaviour
     }
 
     public void DestroyFish(){
-       // Hook can catch another fish
        Instantiate(Resources.Load("BLOOD"), transform.position, Quaternion.identity);
+        // Hook can catch another fish
         if (hook != null)
         {
             hook.hooked = false;
