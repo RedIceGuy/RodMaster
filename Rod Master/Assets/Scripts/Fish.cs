@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Fish : MonoBehaviour
@@ -44,12 +41,11 @@ public class Fish : MonoBehaviour
     {
         if (!is_hooked)
         {
-            fish.transform.position += transform.right *speed * Time.deltaTime;
+            fish.transform.position += speed * Time.deltaTime * transform.right;
         }
         if (fish.transform.position.y >= gm.fishCatchHeight)
         {
             gm.currency += value;
-            // TODO should destroy and add currency for player
             gm.DisplayFishCaughtText(gameObject);
             DestroyFish();
         }
@@ -59,10 +55,10 @@ public class Fish : MonoBehaviour
     public void DestroyFish(){
        // Hook can catch another fish
        Instantiate(Resources.Load("BLOOD"), transform.position, Quaternion.identity);
-            if (hook != null)
-            {
-                hook.hooked = false;
-            } 
+        if (hook != null)
+        {
+            hook.hooked = false;
+        } 
         Destroy(gameObject);
     }
 
