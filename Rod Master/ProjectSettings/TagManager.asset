@@ -6,14 +6,19 @@ TagManager:
   tags:
   - Junk
   - Fish
+  - FishCaughtText
+  - MoneyOwnedText
+  - OceanBed
+  - Boat
+  - ChargeBar
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hook
   - Water
   - UI
-  - 
+  - OceanBed
   - 
   - 
   - 

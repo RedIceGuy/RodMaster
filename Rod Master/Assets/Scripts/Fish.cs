@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Fish : MonoBehaviour
@@ -11,7 +8,6 @@ public class Fish : MonoBehaviour
         Medium,
         Small,
     }
-
 
     public Transform fish;
     public FishType fishType;
@@ -39,30 +35,21 @@ public class Fish : MonoBehaviour
         StartCoroutine(DestroyAfterDelay());
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!is_hooked)
         {
-            fish.transform.position += transform.right *speed * Time.deltaTime;
+            fish.transform.position += speed * Time.deltaTime * transform.right;
         }
-        if (fish.transform.position.y >= gm.fishCatchHeight)
-        {
-            gm.currency += value;
-            // TODO should destroy and add currency for player
-            gm.DisplayFishCaughtText(gameObject);
-            DestroyFish();
-        }
-        
     }
 
     public void DestroyFish(){
-       // Hook can catch another fish
        Instantiate(Resources.Load("BLOOD"), transform.position, Quaternion.identity);
-            if (hook != null)
-            {
-                hook.hooked = false;
-            } 
+        // Hook can catch another fish
+        if (hook != null)
+        {
+            hook.hooked = false;
+        } 
         Destroy(gameObject);
     }
 
@@ -86,11 +73,21 @@ public class Fish : MonoBehaviour
                 }
             }
         }
+        // Fish has been reeled back to the boat
+        else if (other.gameObject.CompareTag("Boat")) {
+            FishCaught();
+        }
+    }
+
+    void FishCaught() {
+        gm.currency += value;
+        gm.DisplayFishCaughtText(gameObject);
+        DestroyFish();
     }
 
     IEnumerator DestroyAfterDelay(){
         yield return new WaitForSeconds(10f);
-        // is fish is not hooked destroy it
+        // If fish is not hooked, destroy it
         if (!is_hooked)
         {
             Destroy(gameObject);

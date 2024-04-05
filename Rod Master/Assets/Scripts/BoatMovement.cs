@@ -11,7 +11,6 @@ public class BoatMovement : MonoBehaviour
     [Header("Disabled while moving")]
     [SerializeField] GameObject rodPivot;
     [SerializeField] GameObject hook;
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

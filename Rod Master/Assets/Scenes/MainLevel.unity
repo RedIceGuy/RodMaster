@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6bfab16f387f95e4bb60f866299be241, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.26852533, g: 0.46447325, b: 0.6146784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,37 +135,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
-    - target: {fileID: 684928492534378246, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_Size.x
-      value: 5.1224065
-      objectReference: {fileID: 0}
-    - target: {fileID: 684928492534378246, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_Size.y
-      value: 1.4470376
-      objectReference: {fileID: 0}
-    - target: {fileID: 684928492534378246, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.07269025
-      objectReference: {fileID: 0}
-    - target: {fileID: 684928492534378246, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.039283216
-      objectReference: {fileID: 0}
-    - target: {fileID: 684928492534378246, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 684928492534378246, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 684928492534378246, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 684928492534378246, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 6
+    - target: {fileID: 1169250305825784277, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3536047944556479077, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -207,76 +179,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6699977947139773706, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_Size.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6699977947139773706, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_Size.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6699977947139773706, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f8640b6fa4386044b844901238f8a74b, type: 3}
-    - target: {fileID: 6699977947139773706, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -390
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -621.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalPosition.z
+    - target: {fileID: 5799357494855428750, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
+    - target: {fileID: 6553667036285160031, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_TagString
+      value: MoneyOwnedText
       objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
+    - target: {fileID: 7073284715628767450, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637946624605337015, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_ConstrainProportionsScale
+    - target: {fileID: 8830403039260575858, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -348,6 +264,10 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+      propertyPath: hookObject
+      value: 
+      objectReference: {fileID: 1356691343}
+    - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
       propertyPath: fishCaughtText
       value: 
       objectReference: {fileID: 1633028405}
@@ -355,11 +275,25 @@ PrefabInstance:
       propertyPath: moneyOwnedText
       value: 
       objectReference: {fileID: 192057406}
+    - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+      propertyPath: chargeBarObject
+      value: 
+      objectReference: {fileID: 1344928502}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+--- !u!1 &1344928502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5054863356623354596, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+  m_PrefabInstance: {fileID: 192057405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1356691343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9177037543849283164, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+  m_PrefabInstance: {fileID: 192057405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1633028405 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8008920062116872687, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
@@ -375,5 +309,5 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 192057405}
   - {fileID: 772205531}
+  - {fileID: 192057405}

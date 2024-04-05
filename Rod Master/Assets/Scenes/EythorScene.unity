@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6bfab16f387f95e4bb60f866299be241, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.26852533, g: 0.46447325, b: 0.6146784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8830403039260575858, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -244,6 +248,10 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+      propertyPath: hookObject
+      value: 
+      objectReference: {fileID: 1356691343}
+    - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
       propertyPath: fishCaughtText
       value: 
       objectReference: {fileID: 1633028405}
@@ -251,11 +259,25 @@ PrefabInstance:
       propertyPath: moneyOwnedText
       value: 
       objectReference: {fileID: 192057406}
+    - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+      propertyPath: chargeBarObject
+      value: 
+      objectReference: {fileID: 1344928502}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+--- !u!1 &1344928502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5054863356623354596, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+  m_PrefabInstance: {fileID: 192057405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1356691343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9177037543849283164, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+  m_PrefabInstance: {fileID: 192057405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1633028405 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8008920062116872687, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
@@ -271,5 +293,5 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 192057405}
   - {fileID: 772205531}
+  - {fileID: 192057405}

@@ -25,6 +25,8 @@ public class EquipButton : MonoBehaviour
             if (RodToEquip == gm.equippedRod) {
                 RodEquipped();
                 return;
+            } else {
+                equipText.text = equip;
             }
         // Player doesn't own the corresponding fishing rod
         } else {
