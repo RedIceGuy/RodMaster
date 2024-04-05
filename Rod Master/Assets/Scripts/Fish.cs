@@ -45,9 +45,7 @@ public class Fish : MonoBehaviour
         }
         if (fish.transform.position.y >= gm.fishCatchHeight)
         {
-            gm.currency += value;
-            gm.DisplayFishCaughtText(gameObject);
-            DestroyFish();
+            FishCaught();
         }
         
     }
@@ -82,6 +80,16 @@ public class Fish : MonoBehaviour
                 }
             }
         }
+        // Fish has been reeled back to the boat
+        else if (other.gameObject.CompareTag("Boat")) {
+            FishCaught();
+        }
+    }
+
+    void FishCaught() {
+        gm.currency += value;
+        gm.DisplayFishCaughtText(gameObject);
+        DestroyFish();
     }
 
     IEnumerator DestroyAfterDelay(){

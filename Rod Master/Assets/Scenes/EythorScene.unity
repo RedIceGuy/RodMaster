@@ -191,6 +191,14 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 4872498827547719733, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225505739448426174, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 165.77892
+      objectReference: {fileID: 0}
     - target: {fileID: 7563300005386533413, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_TagString
       value: Boat

@@ -62,10 +62,10 @@ public class BoatMovement : MonoBehaviour
         rb.velocity -= new Vector2(deltaVelocity, 0);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        // Once the hook collides with the player
-        if (other.CompareTag("Player") && gm.hookThrown) {
-            gm.RetrieveHook();
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D other) {
+    //     // Once the hook collides with the player
+    //     if (other.CompareTag("Player") && gm.hookThrown) {
+    //         gm.RetrieveHook();
+    //     }
+    // }
 }

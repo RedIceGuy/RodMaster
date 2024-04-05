@@ -10,6 +10,7 @@ public class Hook : MonoBehaviour
     [SerializeField] float tapSpeedMultiplier = 2.0f;
     // Flag to track whether the player is reeling the line in
     bool isReeling;
+    public bool canReelIn = false;
 
     public bool hooked = false;
     [SerializeField] float tapBuffer;
@@ -72,12 +73,17 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("OceanBed")) {
-            Rigidbody2D rb =GetComponent<Rigidbody2D>();
+            canReelIn = true;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
             // Disable dynamic physics upon reaching the OceanBed
             rb.isKinematic = true;
             rb.velocity = Vector2.zero;
             // Calculate the path needed to return to the boat
             returnVector = (returnPosition - new Vector2(transform.position.x, transform.position.y)).normalized;
+        }
+        else if (other.gameObject.CompareTag("Boat") && canReelIn) {
+            gm.RetrieveHook();
+            canReelIn = false;
         }
     }
 
