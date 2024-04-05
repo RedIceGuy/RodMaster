@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
+    - target: {fileID: 622169683005504848, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: tapSpeedMultiplier
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3536047944556479077, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 389.6694

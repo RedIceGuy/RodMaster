@@ -4,8 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class Hook : MonoBehaviour
 {
-    public float holdSpeed = 5f;
-    float clickSpeed;
+    // Speed of reeling in while holding the button
+    public float reelSpeed = 5.0f;
+    // Multiplier for the reelSpeed if the player is tapping the button
+    [SerializeField] float tapSpeedMultiplier = 2.0f;
+    // Flag to track whether the player is reeling the line in
+    bool isReeling;
+
     public bool hooked = false;
     [SerializeField] float tapBuffer;
     bool canTap = true;
@@ -15,10 +20,11 @@ public class Hook : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         gm = GameManager.Instance;
+        // Get the relevent hook speed 
+        reelSpeed = gm.equippedRod.GetComponent<FishingRod>().HookSpeed;
     }
 
     private void Awake() {
-        clickSpeed = holdSpeed * 3.0f;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -33,19 +39,28 @@ public class Hook : MonoBehaviour
 
     void ReelIn() {
         Vector2 movement = Vector2.zero;
+        isReeling = true;
+
         // Detect rapid clicking of the mouse button
         if (Input.GetKeyDown(KeyCode.Mouse0) && canTap) {
-            Debug.Log("Tapping");
-            movement = clickSpeed * Time.deltaTime * returnVector;
-            // StartCoroutine(TapCooldown(tapBuffer));
+            StartCoroutine(TapCooldown(tapBuffer));
+
+            // Reeling with an increased speed
+            movement = tapSpeedMultiplier * reelSpeed * Time.deltaTime * returnVector;
         }
         // Detect holding down mouse button
         else if (Input.GetKey(KeyCode.Mouse0)) {
-            Debug.Log("Holding");
-            movement = holdSpeed * Time.deltaTime * returnVector;
+            // Reeling at a constant speed
+            movement = reelSpeed * Time.deltaTime * returnVector;
         }
-
-        transform.Translate(movement);
+        else {
+            // Player isn't reeling in
+            isReeling = false;
+        }
+        // Only apply translation if movement is happening
+        if (isReeling) {
+            transform.Translate(movement);
+        }
     }
 
     // Cooldown between taps to differentiate between taps and holds
