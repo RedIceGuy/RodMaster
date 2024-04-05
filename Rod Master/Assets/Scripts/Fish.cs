@@ -20,6 +20,7 @@ public class Fish : MonoBehaviour
     public int value;
     public bool is_hooked = false;
     private bool bitten = false;
+    private int quantity;
     private Hook hook;
     public float min_y = -4f;
     public float max_y = 1.5f;
@@ -79,6 +80,9 @@ public class Fish : MonoBehaviour
                     fish.transform.parent = other.transform;
                     fish.transform.position = other.transform.position;
                     is_hooked = true;
+                    quantity = PlayerPrefs.GetInt(fish.name, 0);
+                    PlayerPrefs.SetInt(fish.name, quantity+1);
+                    Debug.Log(quantity);
                 }
             }
         }
