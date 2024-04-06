@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public bool hookThrown = false;
     public float fishCatchHeight;
     public float rodPowerCharge;
+    public AudioSource FishCaughtAudio;
 
     [Header("Shop variables")]
     readonly string BASE_CURRENCY_TEXT = "Money owned: $";
@@ -161,6 +162,7 @@ public class GameManager : MonoBehaviour
         Fish fish = fishCaught.GetComponent<Fish>();
         fishCaughtText.text = string.Format(BASE_FISH_CAUGHT_TEXT, fish.name, fish.value);
         fishCaughtText.gameObject.SetActive(true);
+        FishCaughtAudio.Play();
         StartCoroutine(DisableAfterTimeout(fishCaughtText.gameObject, 1.0f));
     }
     void UpdateMoneyOwned() {

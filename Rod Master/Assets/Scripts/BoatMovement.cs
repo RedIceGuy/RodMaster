@@ -7,6 +7,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] float maxSpeed;
     private Rigidbody2D rb;
     GameManager gm;
+    //public AudioSource movingAudio;
 
     [Header("Disabled while moving")]
     [SerializeField] GameObject rodPivot;
