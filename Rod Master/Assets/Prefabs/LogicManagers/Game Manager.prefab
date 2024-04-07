@@ -44,8 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61adf8ff716192a489bb9994c55d6048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hookObject: {fileID: 0}
+  chargeBarObject: {fileID: 0}
+  canThrowHook: 0
+  hookThrown: 0
   fishCatchHeight: 3
+  rodPowerCharge: 0
+  FishCaughtAudio: {fileID: 7528731574183984212, guid: ef445649af0b962448db6add76f52c6f, type: 3}
   currencyText: {fileID: 3335497613147433645, guid: 5b4c55d4278b498438ebc1d4b50a1d45, type: 3}
   currency: 500
   equippedRod: {fileID: 3251373346199778732, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
+  moneyOwnedText: {fileID: 0}
   fishCaughtText: {fileID: 0}

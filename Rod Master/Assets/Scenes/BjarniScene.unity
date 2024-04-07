@@ -325,7 +325,7 @@ PrefabInstance:
     - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
       propertyPath: FishCaughtAudio
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7528731574183984212, guid: ef445649af0b962448db6add76f52c6f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
