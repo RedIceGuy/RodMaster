@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
+    - target: {fileID: 684928492534378246, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1169250305825784277, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -179,6 +183,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3867267814599966343, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5799357494855428750, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_Interactable
       value: 0
@@ -188,8 +196,16 @@ PrefabInstance:
       value: MoneyOwnedText
       objectReference: {fileID: 0}
     - target: {fileID: 7073284715628767450, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7073284715628767450, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_Offset.y
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563300005386533413, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8830403039260575858, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -276,6 +292,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 192057406}
     - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+      propertyPath: FishCaughtAudio
+      value: 
+      objectReference: {fileID: 1336772035}
+    - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
       propertyPath: chargeBarObject
       value: 
       objectReference: {fileID: 1344928502}
@@ -284,6 +304,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+--- !u!82 &1336772035 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8831189634539596252, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+  m_PrefabInstance: {fileID: 192057405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1344928502 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5054863356623354596, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}

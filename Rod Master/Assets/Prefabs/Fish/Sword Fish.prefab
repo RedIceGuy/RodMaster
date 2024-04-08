@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7232142198319610693}
   - component: {fileID: 6490247368132841150}
   - component: {fileID: 8921535847483123700}
+  - component: {fileID: 428002990942258722}
   m_Layer: 0
   m_Name: Sword Fish
   m_TagString: Fish
@@ -122,9 +123,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 3014348068889676675}
+  fishType: 0
   speed: 5
   spawntimer: 10
   value: 100
+  is_hooked: 0
   min_y: -4
   max_y: -1
 --- !u!50 &6490247368132841150
@@ -169,7 +172,7 @@ PolygonCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -282,3 +285,48 @@ PolygonCollider2D:
       - {x: 0.16, y: -0.65}
       - {x: 0.17999999, y: -0.66999996}
   m_UseDelaunayMesh: 0
+--- !u!61 &428002990942258722
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870530782519379468}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.27864778, y: 0.026965976}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6, y: 6}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.9977925, y: 1.5236549}
+  m_EdgeRadius: 0

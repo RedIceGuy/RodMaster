@@ -69,7 +69,6 @@ public class Fish : MonoBehaviour
                     is_hooked = true;
                     quantity = PlayerPrefs.GetInt(fish.name, 0);
                     PlayerPrefs.SetInt(fish.name, quantity+1);
-                    Debug.Log(quantity);
                 }
             }
         }
