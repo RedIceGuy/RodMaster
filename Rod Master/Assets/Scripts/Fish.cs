@@ -21,9 +21,11 @@ public class Fish : MonoBehaviour
     public float min_y = -4f;
     public float max_y = 1.5f;
     GameManager gm;
+    AudioManager am;
 
     private void Awake() {
         gm = GameManager.Instance;
+        am = AudioManager.Instance;
     }
 
     void Start()
@@ -57,11 +59,13 @@ public class Fish : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             hook = other.gameObject.GetComponentInChildren<Hook>();
+            // Fish has been hooked
             if (hook != null)
             {
                 bitten = hook.hooked;
                 if (!bitten)
                 {
+                    am.PlayFishHooked();
                     hook.hooked = true;
                     fish.transform.Rotate(0f,0f,90f);
                     fish.transform.parent = other.transform;
