@@ -51,6 +51,7 @@ MonoBehaviour:
   buttonPressed: {fileID: 8300000, guid: da652ae5a3494be42a66c312bbbee877, type: 3}
   paddleBoat: {fileID: 8300000, guid: 927ccdaf6c1ee5543b01054735135a36, type: 3}
   waterSplash: {fileID: 0}
+  fishingRodCast: {fileID: 8300000, guid: 7a881502638397748bb76e49c6eb579f, type: 3}
 --- !u!82 &5191317360263275244
 AudioSource:
   m_ObjectHideFlags: 0

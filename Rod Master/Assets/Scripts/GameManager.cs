@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+    AudioManager _audioManager;
     [Header("Fishing variables")]
     // Used to replace the player's fishing rod when upgraded.
     // Needs to be stored in a static variable to prevent Unity from only spawning the base rod
@@ -38,6 +39,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Initialize all variables that may break during scene transitions
+    private void InitializeVariables() {
+        _audioManager = AudioManager.Instance;
+        canThrowHook = true;
+        hookThrown = false;
+        fishingMode = true;
+        SetNewRod();
+    }
+
     private void Awake() {
         if (_instance == null) {
             _instance = this;
@@ -47,11 +57,10 @@ public class GameManager : MonoBehaviour
         else if (_instance != this) {
             Destroy(gameObject);
         }
-        SetNewRod();
-        canThrowHook = true;
 
         // Subscribe to the sceneLoaded event
         SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     // Since some UI elements haven't been created when the GM's Awake() method is called
@@ -84,6 +93,12 @@ public class GameManager : MonoBehaviour
             // Make sure hook is in starting state if scene was unloaded while fishing
             RetrieveHook();
         }
+        InitializeVariables();
+    }
+
+    private void OnSceneUnloaded(Scene currentScene) {
+        // Kill all trailing Coroutines
+        StopAllCoroutines();
     }
 
     // Ugly function to replace the player's fishing rod after equipping a new one
@@ -162,7 +177,7 @@ public class GameManager : MonoBehaviour
         Fish fish = fishCaught.GetComponent<Fish>();
         fishCaughtText.text = string.Format(BASE_FISH_CAUGHT_TEXT, fish.name, fish.value);
         fishCaughtText.gameObject.SetActive(true);
-        FishCaughtAudio.Play();
+        _audioManager.PlayFishCaught();
         StartCoroutine(DisableAfterTimeout(fishCaughtText.gameObject, 1.0f));
     }
     void UpdateMoneyOwned() {
@@ -197,15 +212,18 @@ public class GameManager : MonoBehaviour
     }
 
     void CastHook() {
+        _audioManager.PlayFishingRodCast();
+        // Set home position
+        hookObject.GetComponent<Hook>().SetReturnPosition(hookObject.transform.position);
+        // Multiplier is needed to prevent the velocity from being miniscule
         float throwMultiplier = 10.0f;
         Vector3 castingAngle = CalculateCastingAngle();
         Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
-
+        // Add the hook to the physics system, make it sink
         hrb.isKinematic = false;
         hrb.velocity = throwMultiplier * rodPowerCharge * castingAngle;
         chargeBarObject.GetComponent<ChargeBar>().HookThrown();
 
-        hookObject.GetComponent<Hook>().SetReturnPosition(hookObject.transform.position);
         canThrowHook = false;
         hookThrown = true;
     }
