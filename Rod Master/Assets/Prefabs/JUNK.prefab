@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3558098002955956256}
   - component: {fileID: 5676750603944243918}
   m_Layer: 0
-  m_Name: Junk
+  m_Name: JUNK
   m_TagString: Junk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.847213, y: -0.14970517, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3567037832304094270}
   m_Father: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   junk: {fileID: 3558098002955956256}
   junkChild: {fileID: 3567037832304094270}
-  speed: 2.5
+  speed: 0
 --- !u!1 &5510242602181697452
 GameObject:
   m_ObjectHideFlags: 0
