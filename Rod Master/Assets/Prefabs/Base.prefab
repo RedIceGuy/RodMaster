@@ -1239,8 +1239,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -662.02686, y: 484}
-  m_SizeDelta: {x: 597.6764, y: 113.3}
+  m_AnchoredPosition: {x: -333.20932, y: 216.21457}
+  m_SizeDelta: {x: 275.2578, y: 90.8709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1959790313678918249
 CanvasRenderer:
@@ -1810,6 +1810,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: junkSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4689765303896694200, guid: 71a4de82127e8da4facf20d308e0d23d, type: 3}
+      propertyPath: BoatLocation
+      value: 
+      objectReference: {fileID: 7563300005386533413}
+    - target: {fileID: 4689765303896694200, guid: 71a4de82127e8da4facf20d308e0d23d, type: 3}
+      propertyPath: junkToSpawn.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689765303896694200, guid: 71a4de82127e8da4facf20d308e0d23d, type: 3}
+      propertyPath: junkToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 760634304370045596, guid: d83c0dacee649804bbb58a7a5f90ff34, type: 3}
+    - target: {fileID: 4689765303896694200, guid: 71a4de82127e8da4facf20d308e0d23d, type: 3}
+      propertyPath: junkToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 4749556120255667555, guid: 7d8bb5fec20dcc2419a7e9063dda74b1, type: 3}
+    - target: {fileID: 4689765303896694200, guid: 71a4de82127e8da4facf20d308e0d23d, type: 3}
+      propertyPath: junkToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 4542800043124762887, guid: 36744a27a8dc77d4da1894c838b79b1c, type: 3}
     - target: {fileID: 6890651465126890862, guid: 71a4de82127e8da4facf20d308e0d23d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2432,6 +2452,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7089178333926289085}
     m_Modifications:
+    - target: {fileID: -1388925900902216624, guid: 9749343d10cac594e81f433a0e88d827, type: 3}
+      propertyPath: BoatLocation
+      value: 
+      objectReference: {fileID: 7563300005386533413}
     - target: {fileID: 1641562903402639176, guid: 9749343d10cac594e81f433a0e88d827, type: 3}
       propertyPath: m_Name
       value: fishSpawner
