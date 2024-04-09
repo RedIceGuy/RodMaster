@@ -7,7 +7,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField] float maxSpeed;
     private Rigidbody2D rb;
     GameManager gm;
-    //public AudioSource movingAudio;
+    AudioManager _audioManager;
 
     [Header("Disabled while moving")]
     [SerializeField] GameObject rodPivot;
@@ -16,6 +16,7 @@ public class BoatMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         gm = GameManager.Instance;
+        _audioManager = AudioManager.Instance;
     }
 
     // Update is called once per frame

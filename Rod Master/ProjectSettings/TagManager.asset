@@ -11,6 +11,7 @@ TagManager:
   - OceanBed
   - Boat
   - ChargeBar
+  - CatchFishCollision
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - OceanBed
-  - 
+  - CatchFishTrigger
   - 
   - 
   - 

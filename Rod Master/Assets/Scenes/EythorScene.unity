@@ -260,6 +260,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 192057406}
     - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+      propertyPath: FishCaughtAudio
+      value: 
+      objectReference: {fileID: 1156052468}
+    - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
       propertyPath: chargeBarObject
       value: 
       objectReference: {fileID: 1344928502}
@@ -268,6 +272,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
+--- !u!82 &1156052468 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8831189634539596252, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+  m_PrefabInstance: {fileID: 192057405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1344928502 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5054863356623354596, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
