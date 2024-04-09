@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a8371264a20684c88e7b9fa1e89954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junk1: {fileID: 760634304370045596, guid: d83c0dacee649804bbb58a7a5f90ff34, type: 3}
-  spawntimer: 4
+  junkToSpawn:
+  - {fileID: 760634304370045596, guid: d83c0dacee649804bbb58a7a5f90ff34, type: 3}
+  - {fileID: 4749556120255667555, guid: 7d8bb5fec20dcc2419a7e9063dda74b1, type: 3}
+  - {fileID: 4542800043124762887, guid: 36744a27a8dc77d4da1894c838b79b1c, type: 3}
+  BoatLocation: {fileID: 0}
