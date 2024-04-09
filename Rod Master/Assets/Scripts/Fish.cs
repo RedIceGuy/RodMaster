@@ -56,7 +56,7 @@ public class Fish : MonoBehaviour
     }
 
     public void EscapeFish(){
-       Instantiate(Resources.Load("SMOKE"), transform.position, Quaternion.identity);
+       Instantiate(Resources.Load("BUBBLES"), transform.position, Quaternion.identity);
         // Hook can catch another fish
         if (hook != null)
         {
