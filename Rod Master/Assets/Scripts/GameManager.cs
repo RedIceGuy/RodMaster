@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     public bool hookThrown = false;
     public float fishCatchHeight;
     public float rodPowerCharge;
-    public AudioSource FishCaughtAudio;
 
     [Header("Shop variables")]
     readonly string BASE_CURRENCY_TEXT = "Money owned: $";

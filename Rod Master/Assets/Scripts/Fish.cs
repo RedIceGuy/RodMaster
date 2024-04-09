@@ -1,14 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using RodMaster.Enums;
+using System.Linq;
 
 public class Fish : MonoBehaviour
 {
-    public enum FishType{
-        Big,
-        Medium,
-        Small,
-    }
-
     public Transform fish;
     public FishType fishType;
     public int speed = 10;
@@ -21,11 +17,11 @@ public class Fish : MonoBehaviour
     public float min_y = -4f;
     public float max_y = 1.5f;
     GameManager gm;
-    AudioManager am;
+    AudioManager _audioManager;
 
     private void Awake() {
         gm = GameManager.Instance;
-        am = AudioManager.Instance;
+        _audioManager = AudioManager.Instance;
     }
 
     void Start()
@@ -68,21 +64,17 @@ public class Fish : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Player"))
         {
+            // Get the hook component
             hook = other.gameObject.GetComponentInChildren<Hook>();
+            // Check if the player has a good enough fishing rod to catch a fish of this size
+            // bool canCatch = gm.equippedRod.GetComponent<FishingRod>().CanCatch.Contains(fishType);
             // Fish has been hooked
             if (hook != null)
             {
                 bitten = hook.hooked;
                 if (!bitten)
                 {
-                    am.PlayFishHooked();
-                    hook.hooked = true;
-                    fish.transform.Rotate(0f,0f,90f);
-                    fish.transform.parent = other.transform;
-                    fish.transform.position = other.transform.position;
-                    is_hooked = true;
-                    quantity = PlayerPrefs.GetInt(fish.name, 0);
-                    PlayerPrefs.SetInt(fish.name, quantity+1);
+                    FishHooked(other.gameObject);
                 }
             }
         }
@@ -90,6 +82,17 @@ public class Fish : MonoBehaviour
         else if (other.gameObject.CompareTag("Boat")) {
             FishCaught();
         }
+    }
+
+    void FishHooked(GameObject other) {
+        _audioManager.PlayFishHooked();
+        hook.hooked = true;
+        fish.transform.Rotate(0f, 0f, 90f);
+        fish.transform.parent = other.transform;
+        fish.transform.position = other.transform.position;
+        is_hooked = true;
+        quantity = PlayerPrefs.GetInt(fish.name, 0);
+        PlayerPrefs.SetInt(fish.name, quantity + 1);
     }
 
     void FishCaught() {

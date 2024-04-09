@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 3014348068889676675}
-  fishType: 0
+  fishType: 1
   speed: 2
   spawntimer: 5
   value: 20

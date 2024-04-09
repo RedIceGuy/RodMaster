@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FishingLineHealth: 100
   HookSpeed: 2
+  CanCatch: 00000000
