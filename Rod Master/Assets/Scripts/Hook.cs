@@ -7,7 +7,7 @@ public class Hook : MonoBehaviour
     // Speed of reeling in while holding the button
     public float reelSpeed;
     // Multiplier for the reelSpeed if the player is tapping the button
-    // [SerializeField] float tapSpeedMultiplier = 8.0f;
+    [SerializeField] float tapSpeedMultiplier = 8.0f;
     // Flag to track whether the player is reeling the line in
     bool isReeling;
     public bool canReelIn = false;
@@ -41,12 +41,12 @@ public class Hook : MonoBehaviour
         isReeling = true;
 
         // Detect rapid clicking of the mouse button
-        // if (Input.GetKeyDown(KeyCode.Mouse0)) {
-        //     // Reeling with an increased speed
-        //     movement = tapSpeedMultiplier * reelSpeed * Time.deltaTime * returnVector;
-        // }
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            // Reeling with an increased speed
+            movement = tapSpeedMultiplier * reelSpeed * Time.deltaTime * returnVector;
+        }
         // Detect holding down mouse button
-        if (Input.GetKey(KeyCode.Mouse0)) {
+        else if (Input.GetKey(KeyCode.Mouse0)) {
             // Reeling at a constant speed
             movement = reelSpeed * Time.deltaTime * returnVector;
         }

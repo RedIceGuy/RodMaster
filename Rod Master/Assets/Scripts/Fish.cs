@@ -46,7 +46,7 @@ public class Fish : MonoBehaviour
     }
 
     public void DestroyFish(){
-       Instantiate(Resources.Load("MONEY"), transform.position, Quaternion.identity);
+       Instantiate(Resources.Load("BLOOD"), transform.position, Quaternion.identity);
         // Hook can catch another fish
         if (hook != null)
         {
@@ -89,7 +89,7 @@ public class Fish : MonoBehaviour
     }
 
     IEnumerator DestroyAfterDelay(){
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(10f);
         // If fish is not hooked, destroy it
         if (!is_hooked)
         {

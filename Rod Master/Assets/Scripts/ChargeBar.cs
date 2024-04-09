@@ -59,10 +59,4 @@ public class ChargeBar : MonoBehaviour
         chargingText.gameObject.SetActive(true);
         chargingSlider.gameObject.SetActive(true);
     }
-
-    // Reset the current power of the charge
-    public void ResetCharge() {
-        chargingSlider.value = 0;
-        currentCharge = 0;
-    }
 }
