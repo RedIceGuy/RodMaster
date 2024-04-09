@@ -4,7 +4,8 @@ using UnityEngine;
 public class FishSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] fishesToSpawn;
-    readonly int[] options = {10, -10};
+    // The X-axis spawn radius
+    readonly int[] options = {20, -20};
     void Start() {
         foreach (GameObject fishObject in fishesToSpawn) {
             Fish fish = fishObject.GetComponent<Fish>();

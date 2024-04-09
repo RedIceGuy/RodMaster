@@ -53,7 +53,6 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayFishingRodCast() {
-        // Volume of connected clip is very low, so we need to adjust the volume accordingly
         PlayClip(fishingRodCast);
     }
 }

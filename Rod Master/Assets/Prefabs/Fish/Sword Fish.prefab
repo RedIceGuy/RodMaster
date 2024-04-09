@@ -126,10 +126,10 @@ MonoBehaviour:
   fishType: 0
   speed: 5
   spawntimer: 10
-  value: 100
+  value: 200
   is_hooked: 0
   min_y: -4
-  max_y: -1
+  max_y: -2
 --- !u!50 &6490247368132841150
 Rigidbody2D:
   serializedVersion: 4

@@ -125,10 +125,10 @@ MonoBehaviour:
   fish: {fileID: 3014348068889676675}
   fishType: 0
   speed: 2
-  spawntimer: 7
-  value: 100
+  spawntimer: 6
+  value: 120
   is_hooked: 0
-  min_y: -4
+  min_y: -3
   max_y: -1
 --- !u!50 &9117951156721005758
 Rigidbody2D:

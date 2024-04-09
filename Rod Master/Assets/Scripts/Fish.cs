@@ -89,7 +89,7 @@ public class Fish : MonoBehaviour
     }
 
     IEnumerator DestroyAfterDelay(){
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(20f);
         // If fish is not hooked, destroy it
         if (!is_hooked)
         {
