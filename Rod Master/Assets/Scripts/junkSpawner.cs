@@ -11,16 +11,24 @@ public class junkSpawner : MonoBehaviour
     [SerializeField]
     private float spawntimer = 4f;
     // Start is called before the first frame update
-    int[] options = {10,-10};
+    int[] Options = {10,-10};
     void Start()
     {
-        StartCoroutine(spawnJunk(spawntimer,junk1));
+        StartCoroutine(SpawnJunk(spawntimer,junk1));
     }
 
-    private IEnumerator spawnJunk(float interval, GameObject junk)
+    private IEnumerator SpawnJunk(float interval, GameObject junk)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newFish = Instantiate(junk, new Vector3(options[Random.Range(0,2)],Random.Range(-4f,2),0), Quaternion.identity);
-        StartCoroutine(spawnJunk(interval,junk));
+        Instantiate(
+            junk, 
+            new Vector3(
+                Options[Random.Range(0, 2)], 
+                Random.Range(-4f, 2),
+                0
+            ), 
+            Quaternion.identity
+        );
+        StartCoroutine(SpawnJunk(interval,junk));
     }
 }
