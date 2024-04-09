@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   junk: {fileID: 3558098002955956256}
   junkChild: {fileID: 3567037832304094270}
-  speed: 0
+  speed: 2.5
 --- !u!1 &5510242602181697452
 GameObject:
   m_ObjectHideFlags: 0
