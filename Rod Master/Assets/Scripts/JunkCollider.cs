@@ -19,7 +19,7 @@ public class JunkCollider : MonoBehaviour
                 hooked_fish = fishComponent.is_hooked;
                 if (hooked_fish)
                 {
-                    fishComponent.DestroyFish();
+                    fishComponent.EscapeFish();
                 }
             }
         }

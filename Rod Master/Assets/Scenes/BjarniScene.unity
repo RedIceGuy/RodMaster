@@ -383,42 +383,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3994440787684370692, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 275.2578
-      objectReference: {fileID: 0}
-    - target: {fileID: 3994440787684370692, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 90.8709
-      objectReference: {fileID: 0}
-    - target: {fileID: 3994440787684370692, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -333.20932
-      objectReference: {fileID: 0}
-    - target: {fileID: 3994440787684370692, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 216.21457
-      objectReference: {fileID: 0}
-    - target: {fileID: 5890255805493735469, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: junkToSpawn.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5890255805493735469, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: junkToSpawn.Array.data[0]
-      value: 
-      objectReference: {fileID: 760634304370045596, guid: d83c0dacee649804bbb58a7a5f90ff34, type: 3}
-    - target: {fileID: 5890255805493735469, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: junkToSpawn.Array.data[1]
-      value: 
-      objectReference: {fileID: 4749556120255667555, guid: 7d8bb5fec20dcc2419a7e9063dda74b1, type: 3}
-    - target: {fileID: 5890255805493735469, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: junkToSpawn.Array.data[2]
-      value: 
-      objectReference: {fileID: 4542800043124762887, guid: 36744a27a8dc77d4da1894c838b79b1c, type: 3}
-    - target: {fileID: 7009917302181881317, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
-      propertyPath: movingAudio
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8830403039260575858, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
