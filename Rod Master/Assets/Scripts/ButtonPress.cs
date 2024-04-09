@@ -8,6 +8,11 @@ public class ButtonPress : MonoBehaviour
     }
 
     public void ButtonPressed() {
-        _audioManager.PlayButtonPressed();
+        // Prevent edgecase of NullReferenceException on Scene transitions
+        if (_audioManager) {
+            _audioManager.PlayButtonPressed();
+        } else {
+            AudioManager.Instance.PlayButtonPressed();
+        }
     }
 }

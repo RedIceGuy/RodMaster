@@ -96,8 +96,11 @@ public class GameManager : MonoBehaviour
     }
 
     private void OnSceneUnloaded(Scene currentScene) {
-        // Kill all trailing Coroutines
-        StopAllCoroutines();
+        // Prevent edgecase of NullReferenceException on Scene transitions
+        if (this) {
+            // Kill all trailing Coroutines
+            StopAllCoroutines();
+        }
     }
 
     // Ugly function to replace the player's fishing rod after equipping a new one
@@ -130,6 +133,7 @@ public class GameManager : MonoBehaviour
 
         // Throw the fishing line
         if (
+            hookObject != null && // Prevent casting logic from triggering in the shop
             canThrowHook && 
             fishingMode && 
             !hookThrown && 
@@ -246,7 +250,10 @@ public class GameManager : MonoBehaviour
         hookThrown = false;
         // Return the hook to its starting position
         hookObject.transform.position = hookStartingPosition;
-        StartCoroutine(HookBuffer(0.5f));
+        // Prevent edgecase of NullReferenceException on Scene transitions
+        if (this) {
+            StartCoroutine(HookBuffer(0.5f));
+        }
     }
 
     // Prevent the player from charging a throw instantly after retrieving the hook

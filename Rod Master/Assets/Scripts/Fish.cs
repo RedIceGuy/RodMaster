@@ -53,6 +53,7 @@ public class Fish : MonoBehaviour
 
     public void EscapeFish(){
        Instantiate(Resources.Load("BUBBLES"), transform.position, Quaternion.identity);
+       _audioManager.PlayFishEscapes();
         // Hook can catch another fish
         if (hook != null)
         {

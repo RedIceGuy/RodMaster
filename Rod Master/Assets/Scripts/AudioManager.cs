@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip paddleBoat;
     [SerializeField] AudioClip waterSplash;
     [SerializeField] AudioClip fishingRodCast;
+    [SerializeField] AudioClip fishEscapes;
+    [SerializeField] AudioClip reelIn;
 
     public static AudioManager Instance {
         get {
@@ -54,5 +56,13 @@ public class AudioManager : MonoBehaviour
 
     public void PlayFishingRodCast() {
         PlayClip(fishingRodCast);
+    }
+
+    public void PlayFishEscapes() {
+        PlayClip(fishEscapes);
+    }
+
+    public void PlayReelIn() {
+        PlayClip(reelIn);
     }
 }

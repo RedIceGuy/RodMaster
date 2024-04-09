@@ -51,7 +51,9 @@ MonoBehaviour:
   buttonPressed: {fileID: 8300000, guid: da652ae5a3494be42a66c312bbbee877, type: 3}
   paddleBoat: {fileID: 8300000, guid: 927ccdaf6c1ee5543b01054735135a36, type: 3}
   waterSplash: {fileID: 0}
-  fishingRodCast: {fileID: 8300000, guid: 7a881502638397748bb76e49c6eb579f, type: 3}
+  fishingRodCast: {fileID: 8300000, guid: 41cd7198e43ef634a8d15a055dcb3cae, type: 3}
+  fishEscapes: {fileID: 8300000, guid: 1351b42dd46994740b91f7a3b6bce49f, type: 3}
+  reelIn: {fileID: 0}
 --- !u!82 &5191317360263275244
 AudioSource:
   m_ObjectHideFlags: 0
