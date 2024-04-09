@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip paddleBoat;
     [SerializeField] AudioClip waterSplash;
     [SerializeField] AudioClip fishingRodCast;
+    [SerializeField] AudioClip fishEscapes;
+    [SerializeField] AudioClip reelIn;
 
     public static AudioManager Instance {
         get {
@@ -53,7 +55,14 @@ public class AudioManager : MonoBehaviour
     }
 
     public void PlayFishingRodCast() {
-        // Volume of connected clip is very low, so we need to adjust the volume accordingly
         PlayClip(fishingRodCast);
+    }
+
+    public void PlayFishEscapes() {
+        PlayClip(fishEscapes);
+    }
+
+    public void PlayReelIn() {
+        PlayClip(reelIn);
     }
 }

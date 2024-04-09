@@ -135,6 +135,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
+    - target: {fileID: 3144960656850699268, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 995430383}
+    - target: {fileID: 3144960656850699268, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ButtonPressed
+      objectReference: {fileID: 0}
     - target: {fileID: 3536047944556479077, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 389.6694
@@ -262,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
       propertyPath: FishCaughtAudio
       value: 
-      objectReference: {fileID: 1336772035}
+      objectReference: {fileID: 0}
     - target: {fileID: 6512396880870161528, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
       propertyPath: chargeBarObject
       value: 
@@ -272,11 +280,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 853f7798a0f3da04dbd31027403347e0, type: 3}
---- !u!82 &1336772035 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8831189634539596252, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
+--- !u!114 &995430383 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8784310192042064163, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
   m_PrefabInstance: {fileID: 192057405}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dad90f3d0f47b4fa2d66ab0eae9d25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1344928502 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5054863356623354596, guid: d0119c7b504ba5b4082529e06855e1a9, type: 3}
@@ -306,10 +320,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1964428023380961543, guid: 521d8ba20de8dfc4dbc743bb1a57a0e3, type: 3}
-      propertyPath: fishingRodCast
-      value: 
-      objectReference: {fileID: 8300000, guid: 41cd7198e43ef634a8d15a055dcb3cae, type: 3}
     - target: {fileID: 1981439986243411801, guid: 521d8ba20de8dfc4dbc743bb1a57a0e3, type: 3}
       propertyPath: m_Name
       value: Audio Manager

@@ -30,10 +30,9 @@ public class Hook : MonoBehaviour
     void Update()
     {
         // Player can't reel the hook in if it hasn't been cast
-        if (!gm.hookThrown) {
-            return;
+        if (gm.hookThrown) {
+            ReelIn();
         }
-        ReelIn();
     }
 
     void ReelIn() {

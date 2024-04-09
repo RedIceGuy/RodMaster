@@ -126,9 +126,9 @@ MonoBehaviour:
   fishType: 0
   speed: 4
   spawntimer: 3.5
-  value: 50
+  value: 40
   is_hooked: 0
-  min_y: 0
+  min_y: -1.5
   max_y: 1.5
 --- !u!50 &2086036444035586700
 Rigidbody2D:
