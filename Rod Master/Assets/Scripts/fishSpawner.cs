@@ -4,13 +4,18 @@ using UnityEngine;
 public class FishSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] fishesToSpawn;
-    // The X-axis spawn radius
-    readonly int[] options = {20, -20};
+    public GameObject BoatLocation;
+    readonly float[] options = {10, -10};
     void Start() {
         foreach (GameObject fishObject in fishesToSpawn) {
             Fish fish = fishObject.GetComponent<Fish>();
             StartCoroutine(SpawnFish(fish.spawntimer, fishObject));
         }
+    }
+
+    void Update(){
+        options[0] = BoatLocation.transform.position.x +10;
+        options[1] = BoatLocation.transform.position.x -10;
     }
 
     private IEnumerator SpawnFish(float interval, GameObject fish) {
