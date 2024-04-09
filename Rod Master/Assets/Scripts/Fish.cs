@@ -55,6 +55,16 @@ public class Fish : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void EscapeFish(){
+       Instantiate(Resources.Load("SMOKE"), transform.position, Quaternion.identity);
+        // Hook can catch another fish
+        if (hook != null)
+        {
+            hook.hooked = false;
+        } 
+        Destroy(gameObject);
+    }
+
     public void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Player"))
         {
