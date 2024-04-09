@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5668922388093313266}
   - component: {fileID: 7423457678680453849}
   m_Layer: 0
-  m_Name: Sardine
+  m_Name: sardine
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   value: 10
   is_hooked: 0
   min_y: -1
-  max_y: 2.5
+  max_y: 1.5
 --- !u!50 &4238475039003612315
 Rigidbody2D:
   serializedVersion: 4
