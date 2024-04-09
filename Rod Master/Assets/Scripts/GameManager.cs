@@ -145,6 +145,16 @@ public class GameManager : MonoBehaviour
     }
 
     void ToggleFishingMode() {
+        // Enter "movement mode"
+        if (fishingMode) {
+            chargeBarObject.SetActive(false);
+        } 
+        // Enter "fishing mode"
+        else {
+            chargeBarObject.SetActive(true);
+        }
+        // Prevent charge from carrying over if the player is toggling while charging
+        chargeBarObject.GetComponent<ChargeBar>().ResetCharge();
         fishingMode = !fishingMode;
     }
     void UpgradeFishingRod(GameObject rod, int price) {
@@ -213,8 +223,10 @@ public class GameManager : MonoBehaviour
 
     void CastHook() {
         _audioManager.PlayFishingRodCast();
+        // Update the starting position in case the boat was moved
+        hookStartingPosition = hookObject.transform.position;
         // Set home position
-        hookObject.GetComponent<Hook>().SetReturnPosition(hookObject.transform.position);
+        hookObject.GetComponent<Hook>().SetReturnPosition(hookStartingPosition);
         // Multiplier is needed to prevent the velocity from being miniscule
         float throwMultiplier = 10.0f;
         Vector3 castingAngle = CalculateCastingAngle();
