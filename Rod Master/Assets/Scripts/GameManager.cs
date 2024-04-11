@@ -252,7 +252,7 @@ public class GameManager : MonoBehaviour
         hookObject.transform.position = hookStartingPosition;
         // Prevent edgecase of NullReferenceException on Scene transitions
         if (this) {
-            StartCoroutine(HookBuffer(0.5f));
+            StartCoroutine(HookBuffer(1f));
         }
     }
 
