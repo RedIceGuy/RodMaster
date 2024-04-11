@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FishGlossary.unity
     guid: e0b3517a54a18794ab51e4b1152eef88
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 8f6b315270c479f4fb37a45db2f5ffca
   m_configObjects: {}
