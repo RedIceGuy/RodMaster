@@ -11,7 +11,9 @@ public class ChargeBar : MonoBehaviour
     [SerializeField] float chargeIncrement;
     [SerializeField] float currentCharge;
     [SerializeField] float maxCharge = 100.0f;
+    [SerializeField] float minCharge;
     [SerializeField] bool isCharging;
+    [SerializeField] GameObject fillObject;
     bool canCharge;
 
     void Awake() {
@@ -40,6 +42,12 @@ public class ChargeBar : MonoBehaviour
         else if (isCharging && currentCharge > maxCharge) {
             currentCharge = maxCharge;
         }
+
+        if (currentCharge >= minCharge) {
+            fillObject.GetComponent<Image>().color = Color.green;
+        } else {
+            fillObject.GetComponent<Image>().color = Color.red;
+        }
         // Update the charge visually
         chargingSlider.value = currentCharge;
         // Update the charge for gameplay
@@ -62,7 +70,12 @@ public class ChargeBar : MonoBehaviour
 
     // Reset the current power of the charge
     public void ResetCharge() {
+        fillObject.GetComponent<Image>().color = Color.red;
         chargingSlider.value = 0;
         currentCharge = 0;
+    }
+
+    public bool CanThrow() {
+        return currentCharge >= minCharge;
     }
 }
