@@ -8,16 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EythorScene.unity
-    guid: 06ae40059cdcb844f9152ea4e6c11f9b
-  - enabled: 1
+    guid: ec1911af1f739c94b8c3c31466b54473
+  - enabled: 0
     path: Assets/Scenes/AnhScene.unity
     guid: b3b644c503705a440bfb72ba67112eb5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BjarniScene.unity
     guid: 259acc77e6c3f93498721f0608998885
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LorraineScene.unity
     guid: 1c1d6760ab6a4884aa7fadb42f773a8f
   - enabled: 1
@@ -25,7 +25,7 @@ EditorBuildSettings:
     guid: 81012b6b1821bf143af037397d994ac4
   - enabled: 1
     path: Assets/Scenes/MainLevel.unity
-    guid: 8d2e61480ba4bae4e8b24d2a3371433c
+    guid: a1d4663cce49cb54784d8192034ea5d2
   - enabled: 1
     path: Assets/Scenes/GameMenu.unity
     guid: ebf081611f12c1b428405dec3f14ef7c
