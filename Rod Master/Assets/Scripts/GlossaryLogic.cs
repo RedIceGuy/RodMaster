@@ -13,11 +13,11 @@ public class GlossaryLogic : MonoBehaviour
     void Update()
     {
         foreach (GameObject fishObject in fishesToDisplay) {
-            Fish fish = fishObject.transform.GetChild(0).gameObject.GetComponent<Fish>();
-            fish_image = fishObject.transform.GetChild(1).gameObject.GetComponent<Image>();
-            fish_name = fishObject.transform.GetChild(2).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
-            fish_value = fishObject.transform.GetChild(3).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
-            fish_caught = fishObject.transform.GetChild(4).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+            fish_image = fishObject.transform.GetChild(0).gameObject.GetComponent<Image>();
+            fish_name = fishObject.transform.GetChild(1).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+            fish_value = fishObject.transform.GetChild(2).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+            fish_caught = fishObject.transform.GetChild(3).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+            Fish fish = fishObject.transform.childCount > 4 ? fishObject.transform.GetChild(4).gameObject.GetComponent<Fish>() : null;
 
             fish_name.text = fish.name;
             fish_value.text = "$" + fish.value.ToString();
