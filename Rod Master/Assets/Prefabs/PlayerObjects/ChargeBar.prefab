@@ -386,10 +386,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chargingText: {fileID: 133203291957657458}
   chargingSlider: {fileID: 5345239146052823337}
-  chargeIncrement: 0.4
+  chargeIncrement: 0.6
   currentCharge: 0
   maxCharge: 1
+  minCharge: 0.1
   isCharging: 0
+  fillObject: {fileID: 5153653716802668578}
 --- !u!1 &7328571983268103077
 GameObject:
   m_ObjectHideFlags: 0

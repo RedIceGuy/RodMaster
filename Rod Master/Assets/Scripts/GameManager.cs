@@ -225,27 +225,34 @@ public class GameManager : MonoBehaviour
     }
 
     void CastHook() {
-        _audioManager.PlayFishingRodCast();
-        // Update the starting position in case the boat was moved
-        hookStartingPosition = hookObject.transform.position;
-        // Set home position
-        hookObject.GetComponent<Hook>().SetReturnPosition(hookStartingPosition);
-        // Multiplier is needed to prevent the velocity from being miniscule
-        float throwMultiplier = 10.0f;
-        Vector3 castingAngle = CalculateCastingAngle();
-        Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
-        // Add the hook to the physics system, make it sink
-        hrb.isKinematic = false;
-        hrb.velocity = throwMultiplier * rodPowerCharge * castingAngle;
-        chargeBarObject.GetComponent<ChargeBar>().HookThrown();
+        ChargeBar chargeBar = chargeBarObject.GetComponent<ChargeBar>();
+        if (chargeBar.CanThrow()) {
+            _audioManager.PlayFishingRodCast();
+            // Update the starting position in case the boat was moved
+            hookStartingPosition = hookObject.transform.position;
+            // Set home position
+            hookObject.GetComponent<Hook>().SetReturnPosition(hookStartingPosition);
+            // Multiplier is needed to prevent the velocity from being miniscule
+            float throwMultiplier = 10.0f;
+            Vector3 castingAngle = CalculateCastingAngle();
+            Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
+            // Add the hook to the physics system, make it sink
+            hrb.isKinematic = false;
+            hrb.velocity = throwMultiplier * rodPowerCharge * castingAngle;
+            chargeBar.HookThrown();
 
-        canThrowHook = false;
-        hookThrown = true;
+            canThrowHook = false;
+            hookThrown = true;
+        } else {
+            chargeBar.ResetCharge();
+        }
     }
 
     public void RetrieveHook() {
         Rigidbody2D hrb = hookObject.GetComponent<Rigidbody2D>();
         hrb.isKinematic = true;
+        // If the hook has been retrieved then there is nothing hooked on it
+        hookObject.GetComponent<Hook>().hooked = false;
         chargeBarObject.GetComponent<ChargeBar>().HookRetrieved();
         hookThrown = false;
         // Return the hook to its starting position
