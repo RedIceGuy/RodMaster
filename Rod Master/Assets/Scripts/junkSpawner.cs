@@ -19,8 +19,8 @@ public class junkSpawner : MonoBehaviour
     }
 
     void Update(){
-        options[0] = BoatLocation.transform.position.x +10;
-        options[1] = BoatLocation.transform.position.x -10;
+        options[0] = BoatLocation.transform.position.x +20;
+        options[1] = BoatLocation.transform.position.x -20;
     }
 
     private IEnumerator SpawnJunk(float interval, GameObject junk)
