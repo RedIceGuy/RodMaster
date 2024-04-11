@@ -14,6 +14,7 @@ public class GlossaryLogic : MonoBehaviour
     {
         foreach (GameObject fishObject in fishesToDisplay) {
             Fish fish = fishObject.transform.GetChild(0).gameObject.GetComponent<Fish>();
+            fish_image = fishObject.transform.GetChild(1).gameObject.GetComponent<Image>();
             fish_name = fishObject.transform.GetChild(2).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
             fish_value = fishObject.transform.GetChild(3).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
             fish_caught = fishObject.transform.GetChild(4).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
@@ -24,7 +25,6 @@ public class GlossaryLogic : MonoBehaviour
 
             int quantity = PlayerPrefs.GetInt(fish.name, 0);
             if (quantity == 0) {
-                fish_image = fish.GetComponent<Image>();
                 if (fish_image != null)
                 {
                     fish_image.color = Color.black;
