@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 3014348068889676675}
   fishType: 2
-  speed: 2
-  spawntimer: 6
+  speed: 3
+  spawntimer: 8
   value: 120
   is_hooked: 0
   min_y: -3

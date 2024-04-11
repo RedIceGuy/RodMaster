@@ -125,7 +125,7 @@ MonoBehaviour:
   fish: {fileID: 3014348068889676675}
   fishType: 2
   speed: 5
-  spawntimer: 10
+  spawntimer: 12
   value: 200
   is_hooked: 0
   min_y: -4
