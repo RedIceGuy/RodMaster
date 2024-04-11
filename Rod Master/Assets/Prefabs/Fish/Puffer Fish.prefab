@@ -123,12 +123,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 3014348068889676675}
-  fishType: 0
+  fishType: 1
   speed: 2
   spawntimer: 5
   value: 20
   is_hooked: 0
-  min_y: -4
+  min_y: -2
   max_y: -1
 --- !u!50 &6490247368132841150
 Rigidbody2D:

@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: FishingLineHealth
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: -2033149685286550575, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
+      propertyPath: CanCatch.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2033149685286550575, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
+      propertyPath: CanCatch.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2033149685286550575, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
+      propertyPath: CanCatch.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1414451171524390997, guid: 6ac89533c72b3a3419ff6e6f6f9a04c6, type: 3}
       propertyPath: m_Sprite
       value: 
